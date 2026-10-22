@@ -1,0 +1,9 @@
+{
+  "name": "CareAudit — Facility Compliance",
+  "short_name": "CareAudit",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7faf8",
+  "theme_color": "#143c3a",
+  "description": "Offline-first healthcare facility compliance inspections."
+}

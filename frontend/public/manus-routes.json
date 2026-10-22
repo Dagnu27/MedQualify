@@ -1,0 +1,11 @@
+{
+  "routes": [
+    { "path": "/", "title": "CareAudit dashboard" },
+    { "path": "/library", "title": "Checklist library" },
+    { "path": "/new", "title": "New inspection" },
+    { "path": "/team", "title": "Inspector accounts" },
+    { "path": "/audit/:id", "title": "Audit workspace" },
+    { "path": "/summary/:id", "title": "Inspection summary" },
+    { "path": "/report/:id", "title": "Inspection report" }
+  ]
+}
