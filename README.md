@@ -1,0 +1,3 @@
+﻿# MedQualify
+#  data collaceter platform 
+
