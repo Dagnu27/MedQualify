@@ -1329,7 +1329,7 @@
   {
     "id": "dental-moh",
     "title": "Dental Specialty Clinic · MOH 4Ps",
-    "description": "Dental specialty clinic inspection checklist · Ministry of Health 4Ps",
+    "description": "Dental Specialty Clinic inspection checklist",
     "sourceFile": "Dental_Specialty_Clinic_Inspection_Checklist_MOH.docx",
     "sections": [
       {
@@ -1420,63 +1420,63 @@
             "id": "section-2-item-2"
           },
           {
-            "text": "Emergency care specific to dentistry with qualified staff available during working hours.",
+            "text": "Emergency care specific to the dentistry with a qualified staff shall be available during working hours.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-3"
           },
           {
-            "text": "Continuous quality improvement program for services.",
+            "text": "The dental specialty clinic shall have a program of continuous quality improvement for the service.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-4"
           },
           {
-            "text": "Provide or facilitate staff training.",
+            "text": "The dental specialty clinic shall provide or facilitate training to their staffs.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-5"
           },
           {
-            "text": "Display visible notices: Services list, Professionals list, Fees and prices list.",
+            "text": "The dental specialty clinic shall display the following at a visible place: a) List of services available in the clinic during working hours and after working hours; b) List of professionals working in the clinic during and after working hours; c) Updated list of various fees and prices.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-6"
           },
           {
-            "text": "Facilities well marked and easily accessible for persons with disability.",
+            "text": "The dental specialty clinic facilities shall be well marked and easily accessible for persons with disability.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-7"
           },
           {
-            "text": "Running water supply & functional hand washing basin in all patient care rooms.",
+            "text": "All patient care rooms shall be provided with running water supply and functional hand-washing basin.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-8"
           },
           {
-            "text": "Functional access mechanism (stairs/ramp or stairs/elevator) for multi-floor units.",
+            "text": "A dental specialty clinic where functional units are at different floors shall have a mechanism of accessing all functioning rooms horizontally, either by stairs and ramp or stairs and elevator.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-9"
           },
           {
-            "text": "Established system for verbal and written communication about patient care.",
+            "text": "The dental specialty clinic shall have an established system for verbal and written communication about patient care.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-10"
           },
           {
-            "text": "Number and type of technical staff determined by workload analysis.",
+            "text": "The number and type of technical staff shall be determined by the volume and type of work carried out (Workload Analysis).",
             "responseType": "standard",
             "optional": false,
             "severity": "",
@@ -1489,140 +1489,147 @@
         "title": "2. Outpatient Services & Scope of Practice",
         "items": [
           {
-            "text": "Dental surgeon (DDM) shall not perform removable complete denture, fixed complete denture, and maxillofacial prosthodontics (reserved for advanced specialists).",
+            "id": "section-3-item-scope",
+            "text": "Dental Specialty clinic level shall be available at least during the regular working hours based on its scope of practice. This includes restorative services (advice, support and treatment for patients referred from primary care; use, processing and interpretation of intraoral periapical x-rays; diagnosis and management of common dental caries and acute tooth pain; single- and compound-walled caries; class I?V restorations; pulp capping; veneering; anterior pin-supported restorations; fractured-tooth restorations; and referral to the next health tier); endodontic services (diagnosis, x-ray use, endodontic emergencies, anterior and single-rooted tooth treatment, incomplete root formation, vital and non-vital bleaching, retrograde filling, and referral); prosthetic services (assessment and treatment planning for missing teeth, bite registration, use of an articulator, implant-related diagnosis and intervention, artificial prosthesis, and fixed/removable partial dentures); orthodontic services (x-rays and interpretation, assessment and referral, preservation or regain of leeway space, removable orthodontics and appropriate fixed treatment); periodontal therapy (gingival hyperplasia, scaling and root planing, periodontal inflammation/infection and referral); minor oral surgery including exodontias (dento-alveolar infection, referral for complicated facial-space infection/fracture, exodontia for pediatric and adult patients, simple facial/oral soft-tissue injuries, uncomplicated dento-alveolar fracture and simple non-displaced mandibular fracture); and oral health education.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "text": "The dental surgeon (DDM) shall not perform removable complete denture, fixed complete denture, and maxillofacial prosthodontics, as these procedures shall be performed by specialists with advanced training.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-1"
           },
           {
-            "text": "Provide ambulatory care, follow-up, preventive, health promotion, and chronic illness care.",
+            "text": "The dental specialty clinic shall provide: care of ambulatory patients and follow-up of ambulatory patients; preventive and health promotion services; and care for patients with chronic illnesses and follow-ups.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-2"
           },
           {
-            "text": "Comprehensive patient assessment (history, physical exam, vital signs, clinical exam, diagnostics, lab/imaging).",
+            "text": "Patient assessment at the dental clinic shall include: a) comprehensive medical and social history; b) physical examination including vital signs (BP, PR, RR, temperature, pain assessment), height and weight, and clinical examination pertinent to the illness; c) diagnostic impression; d) laboratory and imaging services when indicated; and e) other medical workups when indicated.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-3"
           },
           {
-            "text": "Fully describe treatment options to client/family and document in medical record.",
+            "text": "The range of relevant treatment options and the clinical impression shall be fully described to the client and/or their families and documented on the patient?s medical record accordingly.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-4"
           },
           {
-            "text": "Medical records complete regarding history, exam, oral examination, diagnosis, procedures, medications, and treatment.",
+            "text": "Information in the dental record shall be complete with respect to the patient?s history, physical examination, oral (intra- and extra-oral) examination, diagnosis, diagnostic procedures, medication administration, and treatment to facilitate continuity of care.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-5"
           },
           {
-            "text": "Nurse takes vital signs and necessary assessments prior to dental service.",
+            "text": "The dental specialty clinic shall have a system for the nurse to take vital signs and other necessary assessments to make the patient ready for dental service.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-6"
           },
           {
-            "text": "Dental service provided in accordance with infection prevention standards.",
+            "text": "The dental service shall be provided in accordance with infection prevention standards.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-7"
           },
           {
-            "text": "Functional referral system (urgent conditions, SOPs, direct referral, directory, forms, tracing, feedback, documentation).",
+            "text": "The dental specialty clinic shall have a functional referral system including: a list of conditions indicative for urgent referral; SOP for selection of cases for referral; procedure for referring patients directly to respective higher services; list of potential referral sites with contact address (referral directory); referral forms; referral tracing mechanism (linkage); feedback-providing mechanism; and documentation of referred clients.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-8"
           },
           {
-            "text": "Outpatient service well marked and easily accessible for disabled, elderly, children, and pregnant women.",
+            "text": "The outpatient service shall be well marked and easily accessible for disabled clients, elderly people, children, and pregnant mothers.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-9"
           },
           {
-            "text": "Patient waiting area and corridor ventilated and child-friendly.",
+            "text": "The patient waiting area and corridor shall be ventilated and child-friendly.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-10"
           },
           {
-            "text": "Adequate light, ventilation, and privacy in all outpatient rooms.",
+            "text": "All rooms for patient care shall promote patient dignity and privacy. Outpatient rooms shall have adequate light and ventilation.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-11"
           },
           {
-            "text": "IEC and entertaining materials available in waiting area.",
+            "text": "The dental clinics shall have IEC and entertaining materials in the waiting area.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-12"
           },
           {
-            "text": "Reception, Recording & Waiting area for oral health education",
+            "text": "Reception, Recording & Waiting area for oral health education ? 1 room, 20 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-13"
           },
           {
-            "text": "Examination and treatment room with dental unit",
+            "text": "Examination and treatment room with dental unit ? 1 room, 12 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-14"
           },
           {
-            "text": "Dental x-ray room (optional if integrated with dental unit)",
+            "text": "Dental x-ray room (optional if the machine is not separate from the dental unit) ? 1, as per ERPA.",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-3-item-15"
           },
           {
-            "text": "Panoramic x-ray room",
+            "text": "Panoramic x-ray room ? 1, as per ERPA.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-16"
           },
           {
-            "text": "Dental laboratory (optional)",
+            "text": "Dental laboratory (optional) ? 1, as per dental laboratory standard requirement.",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-3-item-17"
           },
           {
-            "text": "Cleaning and Sterilization room & store",
+            "text": "Cleaning and Sterilization room & store ? 1 room, 8 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-18"
           },
           {
-            "text": "Toilet room (separate male & female)",
+            "text": "Toilet room (separate male & female) ? 2 rooms.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-3-item-19"
           },
           {
-            "text": "Staff or changing room",
+            "text": "Staff or changing room ? 1 room, 6 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
@@ -2592,147 +2599,147 @@
         "title": "5. Medical Recording Service",
         "items": [
           {
-            "text": "Medical record maintained in written form for every patient seen.",
+            "text": "Medical record shall be maintained in written form for every patient seen at all points of care.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-1"
           },
           {
-            "text": "Individual medical records maintained to ensure accuracy and easy retrieval.",
+            "text": "The specialty clinics shall maintain individual medical records in a manner to ensure accuracy and easy retrieval.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-2"
           },
           {
-            "text": "Unique medical record per patient.",
+            "text": "The specialty clinic shall have a unique medical record per patient.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-3"
           },
           {
-            "text": "Queue management system available.",
+            "text": "The specialty clinic shall have a queue management system.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-4"
           },
           {
-            "text": "Written policy/procedure for record completion, release of info, and protection against loss/tampering.",
+            "text": "The specialty clinic shall have a written policy and procedure including: procedures for record completion; conditions, procedures, and fees for releasing medical information; and procedures for protection of medical record information against loss, tampering, alteration, destruction, or unauthorized use.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-5"
           },
           {
-            "text": "Medical records kept confidential and available only to authorized persons.",
+            "text": "Any medical record shall be kept confidential, available only for use by authorized persons or as otherwise permitted by law.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-6"
           },
           {
-            "text": "Entries written legibly in permanent ink, dated, and signed.",
+            "text": "All entries in the patient?s medical record shall be written legibly in permanent ink, dated, and signed by the recording person.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-7"
           },
           {
-            "text": "Required record contents (ID, history, exam, diagnosis, meds, procedures, notes, provider signature, signed consent form).",
+            "text": "Each medical record shall at least contain: identification (name, age, sex, address); history, physical examination, investigation results, and diagnosis; medication, procedure, and consultation notes; name and signature of treating physician and date; and consent form where applicable, signed by the patient. If someone other than the patient signs, the reason and the signer?s relationship to the patient shall be indicated on the form.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-8"
           },
           {
-            "text": "Consent forms printed in understandable format with non-technical language.",
+            "text": "Any consent form for medical treatment that the patient signs shall be printed in an understandable format and written in clear, legible, and non-technical language.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-9"
           },
           {
-            "text": "Mechanism for controlling and tracing medical records in/out of central records room.",
+            "text": "There shall be a mechanism for medical record controlling and tracing whenever patient medical records are taken from and returned to the central medical record room.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-10"
           },
           {
-            "text": "Mechanism to make appointment records ready and return seen cards within 24 hours.",
+            "text": "There shall be a mechanism to make medical records with appointments ready for use and return seen cards to the central medical record room within 24 hours.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-11"
           },
           {
-            "text": "Medical certificates and copies documented on original medical record.",
+            "text": "If the patient is provided with medical certificates, copies of certificates and other records shall be documented and/or recorded on the original medical record.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-12"
           },
           {
-            "text": "Procedure for removal of inactive medical records from central room.",
+            "text": "The specialty clinics shall establish a procedure for removal of inactive medical records from the central medical record room.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-13"
           },
           {
-            "text": "Medical records destroyed as per law ensuring confidentiality (records active for >10 years preserved).",
+            "text": "Medical records shall be destroyed as per the law by using techniques that assure confidentiality. Records active for more than ten years shall not be destroyed.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-14"
           },
           {
-            "text": "Medical record room premises suitable for movement, shelved properly (3-4 inches off floor/walls).",
+            "text": "The premises for the medical record room shall be suitable for movement. Medical records shall be shelved a minimum of 3?4 inches from any outside wall, with the lowest shelf at least 3?4 inches off the floor; the top of the top shelf shall never be used to store records.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-15"
           },
           {
-            "text": "Medical record room has adequate space (central filing, workspace, archive, supply storage).",
+            "text": "The medical record room shall have adequate space for central filing, workspace, archive space, and supply/storage room.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-16"
           },
           {
-            "text": "Medical record room built far from fire and damaging sources.",
+            "text": "The medical record room shall be built far from fire and any damaging sources.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-17"
           },
           {
-            "text": "Dedicated room/area for archiving dead files.",
+            "text": "There shall be a room/area for archiving dead files until they are permanently destroyed.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-18"
           },
           {
-            "text": "Full-time custodian / Health Information Technician with basic computer skills.",
+            "text": "There shall be a full-time custodian/medical record personnel/Health Information Technician with basic computer skill and ability to organize.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-19"
           },
           {
-            "text": "Basic training on medical record keeping provided to staff.",
+            "text": "The specialty clinics shall provide basic training on medical record keeping to the staffs.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-6-item-20"
           },
           {
-            "text": "Minimum medical record equipment (shelves, MPI boxes, computer/printer, reporting formats, cart, ladder, folders, MPI cards, logbook, fire extinguisher).",
+            "text": "The medical record room shall have a minimum of the following: shelves; Master Patient Index boxes; computer and printer; standard reporting formats; cart; ladder; patient folder; MPI cards; log book; and fire extinguisher.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
@@ -2745,70 +2752,70 @@
         "title": "6. Health Promotion Service",
         "items": [
           {
-            "text": "Health promotion service available in dental clinic.",
+            "text": "The health promotion service shall be available in the dental clinic.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-7-item-1"
           },
           {
-            "text": "Plan, schedule, coordinate, lead and monitor clinic-specific health promotion activities.",
+            "text": "The specialty clinics shall plan, schedule, coordinate, lead, and monitor a minimum of specialty clinic-specific health promotion activities.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-7-item-2"
           },
           {
-            "text": "Unbiased and evidence-based information provided.",
+            "text": "The specialty clinics shall make sure that health promotion practice provides unbiased and evidence-based information.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-7-item-3"
           },
           {
-            "text": "Respect national health policy, legislation, protocols and directives.",
+            "text": "The health promotion activity of the specialty clinics shall respect the national health policy, legislations, protocols, and directives.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-7-item-4"
           },
           {
-            "text": "Designated health professional to coordinate health promotion activities.",
+            "text": "A health professional shall be designated to coordinate health promotion activities.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-7-item-5"
           },
           {
-            "text": "Waiting area at reception with audiovisual health promotion materials.",
+            "text": "The specialty clinics shall have a waiting area at reception with audio-visual health promotion materials.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-7-item-6"
           },
           {
-            "text": "Technical manager leads identification of priority conditions and prep of materials.",
+            "text": "The specialty clinics? technical manager shall take the lead to identify priority conditions and prepare or avail promotion materials.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-7-item-7"
           },
           {
-            "text": "Roles and responsibilities specified in job description.",
+            "text": "The roles and responsibilities of the designee in relation to health promotion shall be specified in his/her job descriptions.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-7-item-8"
           },
           {
-            "text": "Health professionals provide health education in their discipline.",
+            "text": "Health professionals shall provide health education in their specific discipline.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-7-item-9"
           },
           {
-            "text": "Audiovisual and printed materials (TV, DVD/VCD, Radio, Tape-recorded) at reception.",
+            "text": "The specialty clinic shall have audio-visual and printed material (TV set, DVD/VCD, radio, tape-recorded) at the reception area.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
@@ -2818,96 +2825,390 @@
       },
       {
         "id": "section-8",
-        "title": "7. Infection Prevention, Sanitation, Safety & Maintenance",
+        "title": "5. Infection Prevention and Control Service",
         "items": [
           {
-            "text": "All activities comply with national infection prevention and control guidelines.",
+            "text": "All activities performed for infection prevention shall comply with the national infection prevention and control guidelines.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-1"
           },
           {
-            "text": "IPC effectively and efficiently governed and managed.",
+            "text": "Infection prevention and control shall be effectively and efficiently governed and managed according to IPC guidelines.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-2"
           },
           {
-            "text": "Identify infection risk procedures and implement reduction strategies (PPE, cleaning, sterilization, isolation, waste disposal, aseptic technique).",
+            "text": "The specialty clinics shall identify procedures and processes associated with infection risk and implement strategies to reduce infection risk, including appropriate use of PPE; equipment cleaning; sterilization, in particular of invasive equipment as appropriate; separation of patients with communicable diseases; disposal of infectious waste and body fluids; disposal of sharps and needles; and aseptic techniques for invasive procedures.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-3"
           },
           {
-            "text": "Provide IPC training for all staff as per national guidelines.",
+            "text": "IPC training shall be provided for all specialty clinic staff as recommended by the national infection prevention and control guidelines.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-4"
           },
           {
-            "text": "Maintain decontamination, reprocessing, environmental cleaning, waste management, hand hygiene, PPE, and sharp safety.",
+            "text": "At a minimum, the following procedures shall be maintained: decontamination and reprocessing of medical devices (instrument processing); environmental cleaning; specialty clinic waste management; standard precautions; transmission-based precautions; hand hygiene; personal protective equipment/PPE; and sharp and injection safety.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-5"
           },
           {
-            "text": "Train staff on minimizing exposure to blood-borne infections (first aid, reporting, PEP program evaluation).",
+            "text": "The specialty clinics shall train all staff on how to minimize exposure to blood-borne infections and provide documented evidence. Training shall include immediate first aid; reporting and monitoring protocols; evaluation of the PEP program; reporting exposures; and counseling and testing for exposed staff.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-6"
           },
           {
-            "text": "Basic or refresher training on IPC for staff at least once per year.",
+            "text": "The specialty clinics shall provide basic or refresher IPC training for permanent and new staff at least once per year.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-7"
           },
           {
-            "text": "Infectious and non-infectious medical wastes handled, segregated (3-bin system), and treated (incineration, autoclaving, chemical/steam sterilization).",
+            "text": "Infectious and non-infectious medical wastes shall be handled and managed.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-8"
           },
           {
-            "text": "Clean and safe environment, continuous safe water supply.",
+            "text": "The specialty clinics? environment shall be clean and safe. There shall be access to continuous, safe, and ample water supply.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-9"
           },
           {
-            "text": "Routine cleaning and sanitizing of patient areas and waiting rooms at least twice daily.",
+            "text": "The specialty clinics shall routinely clean and sanitize patient areas and waiting rooms at least twice daily and more whenever needed.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-10"
           },
           {
-            "text": "Functional sewerage system with flushing toilets.",
+            "text": "Sewage disposal shall be according to the Specialty Clinic Waste Management National Directive. The specialty clinics shall have a functional sewerage system and only flushing toilet system.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-11"
           },
           {
-            "text": "Housekeeping and maintenance services (cleaning protocols, odor control, equipment maintenance, fire/emergency preparedness, backup power).",
+            "text": "The housekeeping service shall have the following sanitary activities: basic cleaning such as dusting, sweeping, polishing, and washing; special cleaning of different types of floors, walls and ceilings, doors and windows, furniture and fixtures, and Venetian blinds; cleaning and maintenance of toilet and shower; water treatment, filtering and purification.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-8-item-12"
           }
         ]
+      },
+      {
+        "id": "section-9",
+        "title": "Sanitation and Waste Management",
+        "items": [
+          {
+            "id": "section-9-item-1",
+            "text": "Infectious and non-infectious medical waste containers shall be leak proof, have tight-fitting covers, and be kept clean and in good repair until disposal.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-9-item-2",
+            "text": "Reusable containers for infectious medical waste and general medical waste shall be thoroughly washed and decontaminated each time.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-9-item-3",
+            "text": "Wastes shall be segregated. Segregation of specialty clinic waste shall include: separating different types of waste; providing colored waste receptacles specifically suited for each category; segregation at the source (such as ward bedside, OR, and laboratory); and using a three-bin system.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-9-item-4",
+            "text": "Treatment or disposal of infectious medical waste shall be performed by one or more approved methods.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-9-item-5",
+            "text": "Approved methods include incineration; incineration or interment of recognizable human anatomical remains unless burial at an approved landfill is authorized; chemical sterilization; gas sterilization; discharge via an approved sewerage system; steam sterilization; and secure landfill.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-9-item-6",
+            "text": "Specialty clinic waste that is not infectious shall be disposed of according to the Health Care Waste Management National Directive.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-9-item-7",
+            "text": "The facility shall have a waste management plan for all specialty clinic wastes.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-9-item-8",
+            "text": "The waste management plan shall include segregation, storage, disposal, treatment, and transport of medical waste.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-10",
+        "title": "Housekeeping and Maintenance Services",
+        "items": [
+          {
+            "id": "section-10-item-1",
+            "text": "In the housekeeping service, the types and sources of unwanted odors in the specialty clinic premises shall be identified, controlled, and removed.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-10-item-2",
+            "text": "If the specialty clinic does not have its own housekeeping and maintenance services, there shall be a contract agreement with external organizations.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-10-item-3",
+            "text": "All areas of the specialty clinic, including the building and grounds, shall be kept clean and orderly.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-10-item-4",
+            "text": "The specialty clinic shall conduct regular routine, preventive, and corrective maintenance for all facilities and operating systems (e.g., electrical, water, and ventilation).",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-10-item-5",
+            "text": "There shall be written protocols and procedures for medical equipment maintenance, including a plan for preventive and curative maintenance, replacements, upgrades, and new equipment; safe disposal procedures; an effective tracking system to monitor maintenance activity; and a method to ensure diagnostic equipment operates with predicted specificity and sensitivity.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-11",
+        "title": "Fire and Emergency Preparedness",
+        "items": [
+          {
+            "id": "section-11-item-1",
+            "text": "The specialty clinic shall comply with the National Fire Protection standard.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-11-item-2",
+            "text": "Fire extinguishers shall be visually inspected at least monthly; fully inspected at least annually; recharged, repaired, and hydro-tested as required by the manufacturer; and labeled with the date of the last inspection.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-11-item-3",
+            "text": "No flammable cleaning agents or other flammable liquids or gases shall be stored in any area of the specialty clinic except in a properly fire-rated and ventilated storage area specifically designed for such storage.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-12",
+        "title": "Water Supply",
+        "items": [
+          {
+            "id": "section-12-item-1",
+            "text": "A reliable drinking-water point shall be accessible for staff, patients, and attendants at all times.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-12-item-2",
+            "text": "Ample and potable water services shall be available 24 hours a day and 365 days a year through regular or alternate sources.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-12-item-3",
+            "text": "A reliable water point, with soap or a suitable alternative, shall be available at all clinical service areas.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-12-item-4",
+            "text": "If rainwater and mains supply are both used, mains water shall be isolated from the rainwater system by a valve mechanism or tap.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-12-item-5",
+            "text": "If the specialty clinic has ground water, there shall be a written policy and procedures for ground water treatment.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-12-item-6",
+            "text": "Water in tanks shall be protected from sunlight.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-12-item-7",
+            "text": "Plastic tanks should be kept out of the sun or painted.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-13",
+        "title": "Premises and Support Facilities",
+        "items": [
+          {
+            "id": "section-13-item-1",
+            "text": "Separate space shall be provided for storage of housekeeping equipment and supplies.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-13-item-2",
+            "text": "Adequate space shall be available for service-specific janitors? closets and cleaning equipment and supplies, maintained separately and not used for cleaning other locations.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-13-item-3",
+            "text": "Separate janitors? closets and cleaning equipment shall be maintained for surgical suites; laboratories, radiology, offices, locker rooms and other areas; and patient areas.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-13-item-4",
+            "text": "The specialty clinic shall have an alternate emergency power supply.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-13-item-5",
+            "text": "The specialty clinic waste management system shall have a functional sewerage system including septic tank, solid waste storage room/area, plumbing setup stores as appropriate, and flushing toilets/VIP latrine.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-14",
+        "title": "Infection Prevention and Control Personnel",
+        "items": [
+          {
+            "id": "section-14-item-1",
+            "text": "The specialty clinic shall have the following personnel: an environmental health professional/designated officer; a general maintenance technologist/technician (optional); housekeeping staff such as cleaners and waste handlers; and a plumber as appropriate.",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-15",
+        "title": "Infection Prevention and Control Equipment and Supplies",
+        "items": [
+          {
+            "id": "section-15-item-1",
+            "text": "The specialty clinic shall ensure that equipment and supplies necessary for infection prevention are available.",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-15-item-2",
+            "text": "The specialty clinic shall have a reserve electrical generator.",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-15-item-3",
+            "text": "Waste management equipment and supplies shall include color-coded bins, waste baskets, garbage bin, plastic garbage bags, safety boxes, and needle crusher (optional).",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-15-item-4",
+            "text": "Cleaning products shall include floor-cleaning brush (optional), plastic drum, wheelbarrow, water trolley, ladder, scraping pump (optional), spraying pump (optional), Flit pump, broom, dust mop, floor-wiping brush, counter brush, ceiling brush, glass-cleaning/wiping brush, scrapers, dustbin paddles, plastic mug, rat-trapping cage, bed pan washer, cleaning towel, and plastic bucket.",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-15-item-5",
+            "text": "Instrument-processing supplies shall include autoclaves/steam sterilizers, test strips, oven, drums of different sizes, storage shelves for medical equipment, chemicals and disinfectants, and brushes.",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-15-item-6",
+            "text": "Hand-hygiene supplies shall include hand-washing sinks, alcohol-based hand rub, faucet, paper towels, tap water/water container, and soap.",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-15-item-7",
+            "text": "Personal protective equipment shall include gown, heavy-duty glove, surgical glove, plastic apron, boots, examination glove, goggles, different masks, head cover, and face shield.",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          }
+        ]
       }
     ],
-    "itemCount": 218
+    "itemCount": 255
   },
   {
     "id": "medium",
