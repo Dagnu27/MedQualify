@@ -903,34 +903,61 @@
   },
   {
     "id": "dental",
-    "title": "Dental Specialty Clinic",
-    "description": "Dental specialty clinic inspection checklist",
+    "title": "Medium Dental Specialty Clinic",
+    "description": "Medium dental specialty clinic licensing checklist",
     "sourceFile": "Dental_Specialty_Clinic_Inspection_Checklist.docx",
     "sections": [
+      {
+        "id": "section-2",
+        "title": "2. Required Professionals / Human Power",
+        "items": [
+          {
+            "id": "section-2-item-1",
+            "text": "BDS / Dental Therapist ? License-holder professional",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-2-item-2",
+            "text": "Dental Technician (optional) ? Assistant professional",
+            "responseType": "standard",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-2-item-3",
+            "text": "Clinical Nurse ? Professional",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-2-item-4",
+            "text": "Cleaner ? Cleaner",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-2-item-5",
+            "text": "Receptionist ? Facilitator",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
       {
         "id": "section-3",
         "title": "3. Operational Conditions of the Facility",
         "items": [
-          {
-            "text": "5.4.1",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-3-item-1"
-          },
           {
             "text": "Ceiling",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-3-item-2"
-          },
-          {
-            "text": "5.4.2",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-3-item-3"
           },
           {
             "text": "Adequate Ventilation",
@@ -940,25 +967,11 @@
             "id": "section-3-item-4"
           },
           {
-            "text": "5.4.3",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-3-item-5"
-          },
-          {
             "text": "Adequate Lighting",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-3-item-6"
-          },
-          {
-            "text": "5.4.4",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-3-item-7"
           },
           {
             "text": "Fire Safety / Prevention",
@@ -968,13 +981,6 @@
             "id": "section-3-item-8"
           },
           {
-            "text": "5.4.5",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-3-item-9"
-          },
-          {
             "text": "Water Supply",
             "responseType": "availability",
             "optional": false,
@@ -982,25 +988,11 @@
             "id": "section-3-item-10"
           },
           {
-            "text": "5.4.6",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-3-item-11"
-          },
-          {
             "text": "Electricity Supply",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-3-item-12"
-          },
-          {
-            "text": "5.4.7",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-3-item-13"
           },
           {
             "text": "Telephone Service",
@@ -1012,29 +1004,77 @@
         ]
       },
       {
+        "id": "section-4",
+        "title": "4. Size and Area of Facility Work Rooms",
+        "items": [
+          {
+            "id": "section-4-item-1",
+            "text": "Reception / Card room ? 1 room (16 sq. m.)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-2",
+            "text": "Examination and Treatment room ? 2 rooms (12 sq. m. each)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-3",
+            "text": "Dental X-ray room ? 1 (as per ERPA)",
+            "responseType": "standard",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-4",
+            "text": "Dental Laboratory room ? 1 (as per dental lab standard)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-5",
+            "text": "Cleaning and Sterilization room ? 1 room (8 sq. m.)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-6",
+            "text": "Toilet room (Male & Female) ? 2 rooms (8 sq. m. each)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-7",
+            "text": "Store room for medical supplies ? 1 room (5 sq. m.)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-8",
+            "text": "Incinerator (mobile/fixed) ? 1",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
         "id": "section-5",
         "title": "5. Required Medical Equipment and Products",
         "items": [
-          {
-            "text": "7.1",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-1"
-          },
           {
             "text": "Dental unit with dental chair, dental stool",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-2"
-          },
-          {
-            "text": "7.2",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-3"
           },
           {
             "text": "Instruments for examining",
@@ -1044,25 +1084,11 @@
             "id": "section-5-item-4"
           },
           {
-            "text": "7.3",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-5"
-          },
-          {
             "text": "Plastic instruments for filling treatment",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-6"
-          },
-          {
-            "text": "7.4",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-7"
           },
           {
             "text": "Materials & instruments to keep area free from moisture & improve visibility",
@@ -1072,25 +1098,11 @@
             "id": "section-5-item-8"
           },
           {
-            "text": "7.5",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-9"
-          },
-          {
             "text": "Dental hand pieces (High & Low speed)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-10"
-          },
-          {
-            "text": "7.6",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-11"
           },
           {
             "text": "Instruments for root canal treatment",
@@ -1100,25 +1112,11 @@
             "id": "section-5-item-12"
           },
           {
-            "text": "7.7",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-13"
-          },
-          {
             "text": "Materials for root canal treatment",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-14"
-          },
-          {
-            "text": "7.8",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-15"
           },
           {
             "text": "Rotating & hand cutting instruments (bone rongeurs, files, elevators)",
@@ -1128,25 +1126,11 @@
             "id": "section-5-item-16"
           },
           {
-            "text": "7.9",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-17"
-          },
-          {
             "text": "Forceps for Dental Extractions (Deciduous teeth)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-18"
-          },
-          {
-            "text": "7.10",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-19"
           },
           {
             "text": "Mandibular forceps for anterior & posterior teeth extraction",
@@ -1156,25 +1140,11 @@
             "id": "section-5-item-20"
           },
           {
-            "text": "7.11",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-21"
-          },
-          {
             "text": "Right-angled forceps for mandibular extraction",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-22"
-          },
-          {
-            "text": "7.12",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-23"
           },
           {
             "text": "Maxillary forceps for anterior & posterior teeth extraction",
@@ -1184,25 +1154,11 @@
             "id": "section-5-item-24"
           },
           {
-            "text": "7.13",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-25"
-          },
-          {
             "text": "Forceps & elevators for Maxillary and Mandibular root extraction",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-26"
-          },
-          {
-            "text": "7.14",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-27"
           },
           {
             "text": "Orthodontics instruments (optional)",
@@ -1212,25 +1168,11 @@
             "id": "section-5-item-28"
           },
           {
-            "text": "7.15",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-29"
-          },
-          {
             "text": "Periodontal instruments (Scalers)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-30"
-          },
-          {
-            "text": "7.16",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-31"
           },
           {
             "text": "Prosthodontics Instruments (ex. Impression tray)",
@@ -1240,39 +1182,11 @@
             "id": "section-5-item-32"
           },
           {
-            "text": "7.17",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-33"
-          },
-          {
             "text": "Basic Dental Laboratory Equipments",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-34"
-          },
-          {
-            "text": "7.18",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-35"
-          },
-          {
-            "text": "Equipment for Radiology Department:",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-36"
-          },
-          {
-            "text": "7.18.1",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-37"
           },
           {
             "text": "Dental X-ray unit (periapical)",
@@ -1282,25 +1196,11 @@
             "id": "section-5-item-38"
           },
           {
-            "text": "7.18.2",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-39"
-          },
-          {
             "text": "Panoramic radiography (Optional)",
             "responseType": "availability",
             "optional": true,
             "severity": "",
             "id": "section-5-item-40"
-          },
-          {
-            "text": "7.18.3",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-41"
           },
           {
             "text": "Cephalometric radiography (Optional)",
@@ -1310,25 +1210,11 @@
             "id": "section-5-item-42"
           },
           {
-            "text": "7.19",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-43"
-          },
-          {
             "text": "View box for radiography (Negatoscope)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-44"
-          },
-          {
-            "text": "7.20",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-45"
           },
           {
             "text": "Automatic film processing (Optional)",
@@ -1338,39 +1224,11 @@
             "id": "section-5-item-46"
           },
           {
-            "text": "7.21",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-47"
-          },
-          {
             "text": "Lead Aprone",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-48"
-          },
-          {
-            "text": "7.22",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-49"
-          },
-          {
-            "text": "Equipments for sterilization:",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-50"
-          },
-          {
-            "text": "7.22.1",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-51"
           },
           {
             "text": "Autoclave",
@@ -1380,25 +1238,11 @@
             "id": "section-5-item-52"
           },
           {
-            "text": "7.22.2",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-53"
-          },
-          {
             "text": "Dry heat sterilization (Oven)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-54"
-          },
-          {
-            "text": "7.22.3",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-55"
           },
           {
             "text": "Ultrasonic cleaner system (Optional)",
@@ -1408,25 +1252,11 @@
             "id": "section-5-item-56"
           },
           {
-            "text": "7.22.4",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-57"
-          },
-          {
             "text": "Cotton roll sterilizer",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-58"
-          },
-          {
-            "text": "7.22.5",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-59"
           },
           {
             "text": "Different pans use for disinfection & sterilization",
@@ -1436,25 +1266,11 @@
             "id": "section-5-item-60"
           },
           {
-            "text": "7.23",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-61"
-          },
-          {
             "text": "Equipment used for amalgam restoration",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-62"
-          },
-          {
-            "text": "7.24",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-63"
           },
           {
             "text": "Different operatory cabinets, drum, kidney dish",
@@ -1464,25 +1280,11 @@
             "id": "section-5-item-64"
           },
           {
-            "text": "7.25",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-65"
-          },
-          {
             "text": "Thermometer, stethoscope, measuring tape (optional)",
             "responseType": "availability",
             "optional": true,
             "severity": "",
             "id": "section-5-item-66"
-          },
-          {
-            "text": "7.26",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-67"
           },
           {
             "text": "BP apparatus / sphygmomanometer with stethoscope",
@@ -1492,39 +1294,11 @@
             "id": "section-5-item-68"
           },
           {
-            "text": "7.27",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-69"
-          },
-          {
-            "text": "Consumable Dental Materials:",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-70"
-          },
-          {
-            "text": "7.27.1",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-71"
-          },
-          {
             "text": "Dental films (Periapical, occlusal & panoramic)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-72"
-          },
-          {
-            "text": "7.27.2",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-73"
           },
           {
             "text": "Light curing unit with composite materials",
@@ -1534,25 +1308,11 @@
             "id": "section-5-item-74"
           },
           {
-            "text": "7.27.3",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-75"
-          },
-          {
             "text": "Local anesthesia (Spray, syringe, Lidocaine)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-76"
-          },
-          {
-            "text": "7.27.4",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-5-item-77"
           },
           {
             "text": "Other consumables (analgesics, disposable syringes & gloves)",
@@ -1564,7 +1324,7 @@
         ]
       }
     ],
-    "itemCount": 92
+    "itemCount": 56
   },
   {
     "id": "dental-moh",
