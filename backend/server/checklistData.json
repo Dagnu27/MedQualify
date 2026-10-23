@@ -2,150 +2,904 @@
   {
     "id": "pharmacy",
     "title": "Community Pharmacy",
-    "description": "Community pharmacy auditing checklist",
+    "description": "Community pharmacy post-inspection checklist / auditing checklist",
     "sourceFile": "Community_Pharmacy_Auditing_Checklist.docx",
     "sections": [
       {
-        "id": "section-4",
-        "title": "Use the following tracer medicines for sampling during the audit :",
+        "id": "section-1",
+        "title": "Licensing Status",
         "items": [
           {
+            "id": "section-1-item-1",
+            "text": "Valid license (check legality status and license number; note issue date)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-1-item-2",
+            "text": "License displayed in a clear place (check originality)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "External Appearance",
+        "items": [
+          {
+            "id": "section-2-item-1",
+            "text": "The name of the pharmacy is conspicuously displayed near public entrances",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-2-item-2",
+            "text": "Accessibility of entrance to people with disability",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-2-item-3",
+            "text": "Promotional materials like posters on windows, doors or exterior parts",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "minor"
+          },
+          {
+            "id": "section-2-item-4",
+            "text": "Cleanliness and maintenance of the premises",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-2-item-5",
+            "text": "Waste accumulations and depot surrounding the pharmacy",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-2-item-6",
+            "text": "Storage areas must be self-contained, with no connection to doors or windows of other premises",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Dispensing Premises",
+        "items": [
+          {
+            "id": "section-3-item-1",
+            "text": "Appropriate waiting area with chairs",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-3-item-2",
+            "text": "Dispensing area maintained in good repair with washable walls and floors",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-3-item-3",
+            "text": "Dispensing area is clean, tidy, and uncluttered (check regular cleaning schedules)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-3-item-4",
+            "text": "Medicines must not be accessible by self-service",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-3-item-5",
+            "text": "All medicines are stored within the professional area",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-3-item-6",
+            "text": "Well illuminated and ventilated",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-3-item-7",
+            "text": "No direct sunlight towards medicines",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-3-item-8",
+            "text": "No medicine shelved with any other products (check fridge and sample rows)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-3-item-9",
+            "text": "Access to dispensing area is strictly controlled",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-3-item-10",
+            "text": "Size and layout allow effective communication, direct supervision, safe and efficient workflow",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "Dispensing Practice",
+        "items": [
+          {
+            "id": "section-4-item-1",
+            "text": "Dispensing standard operating procedure (SOP) available",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-4-item-2",
+            "text": "Medicines dispensed with appropriate counseling and recorded in logbook",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-4-item-3",
+            "text": "Keep individual information of chronic patients and medication profiles for each refill visit",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-4-item-4",
+            "text": "Medicines prescribed based on STG and dispensed based on National Formulary",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-4-item-5",
+            "text": "Medicines labeled before dispensing to patient",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-4-item-6",
+            "text": "Appropriate area for counseling of patients",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-4-item-7",
+            "text": "Shelving arrangement is alphabetical, pharmacological, or logical",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      {
+        "id": "section-5",
+        "title": "Compounding",
+        "items": [
+          {
+            "id": "section-5-item-1",
+            "text": "Written SOP for compounding available and displayed in CPD room",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-5-item-2",
+            "text": "Type of products prepared and source of ingredients checked",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-5-item-3",
+            "text": "Appropriate labeling on compounded medicines",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-5-item-4",
+            "text": "Neatness of compounding room and cleaning procedures",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-5-item-5",
+            "text": "Compounding done by licensed pharmacist (or checked by pharmacist)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-5-item-6",
+            "text": "Compounded medicines recorded in a logbook",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-6",
+        "title": "Prescription and Prescribing Practices",
+        "items": [
+          {
+            "id": "section-6-item-1",
+            "text": "Standard prescription used for non-NPS medicines",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-6-item-2",
+            "text": "Record of prescription registration book for prescription-only medicines",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-6-item-3",
+            "text": "Use filled, signed prescriptions (check patient, facility, medication, professional details, legibility, completeness, correctness)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-6-item-4",
+            "text": "Use valid prescriptions (not copied, forged, or plain paper; check signatures and license numbers)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-6-item-5",
+            "text": "On average, 2-3 medicines prescribed and dispensed per prescription",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "minor"
+          },
+          {
+            "id": "section-6-item-6",
+            "text": "Medicines prescribed by generic name",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-6-item-7",
+            "text": "Prescription-only medicines not dispensed without prescription",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-6-item-8",
+            "text": "Check frequency of prescriptions from given facility or prescriber",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "minor"
+          },
+          {
+            "id": "section-6-item-9",
+            "text": "Check interactions and/or contraindications in dispensed medicines",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "id": "section-7",
+        "title": "Adverse Drug Reaction and Product Defect Reporting",
+        "items": [
+          {
+            "id": "section-7-item-1",
+            "text": "Prepaid yellow page / ADE reporting format available",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-7-item-2",
+            "text": "Check any reported ADR and product quality defects",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-8",
+        "title": "Supply Chain of Medicines",
+        "items": [
+          {
+            "id": "section-8-item-1",
+            "text": "Bin and stock cards are updated",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-2",
+            "text": "Availability of vouchers, sales tickets, and dispensing registers (legal and timely)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-3",
+            "text": "Proper recording, use, and filing of vouchers, sales tickets, and registers",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-4",
+            "text": "Record date and quantity received on stock and bin cards",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-5",
+            "text": "Check FIFO or LIFO flow of medicines",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-6",
+            "text": "Check beginning and ending stock balance and purchase amounts",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-7",
+            "text": "Trace source, legality, and batch numbers using invoices",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-8",
+            "text": "Check for non-pharmacist engagement in purchasing",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-9",
+            "text": "Check availability and source of program medicines",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-10",
+            "text": "Daily medicine sales recorded",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-8-item-11",
+            "text": "Suppliers, wholesalers, or distributors are licensed in Ethiopia",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-9",
+        "title": "Recording and Reporting",
+        "items": [
+          {
+            "id": "section-9-item-1",
+            "text": "All records kept and prescriptions kept for at least two years",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-9-item-2",
+            "text": "Orders, storage, preparation, sale, delivery, and disposal recorded and maintained",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-9-item-3",
+            "text": "All unfit-for-use (damaged or expired) medicines recorded",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-10",
+        "title": "Narcotic and Psychotropic Medicines (Controlled Substances)",
+        "items": [
+          {
+            "id": "section-10-item-1",
+            "text": "Stock on hand and dispensed controlled substances recorded and maintained",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-10-item-2",
+            "text": "Separate locked room or cabinet (key kept with head pharmacist, permanently affixed)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-10-item-3",
+            "text": "NPS prescriptions not used to prescribe other medicines",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-10-item-4",
+            "text": "NPS and other medicines not prescribed together (single prescription for single NPS drug)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-10-item-5",
+            "text": "NPS prescription papers maintained for at least five years",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-10-item-6",
+            "text": "Use filled and officially signed NPS prescriptions (check patient/facility stamp, serial number)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-10-item-7",
+            "text": "Submit regular consumption and stock reports to appropriate regulatory organ",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-10-item-8",
+            "text": "All records of NPS stored securely",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-11",
+        "title": "Staff Appearance and Credentials",
+        "items": [
+          {
+            "id": "section-11-item-1",
+            "text": "Licensed pharmacists available in the pharmacy (check HR files)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-11-item-2",
+            "text": "All pharmacy personnel wear name tags with clear responsibility and profession",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-11-item-3",
+            "text": "Head pharmacist has at least four years of work experience",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-11-item-4",
+            "text": "All staff have job descriptions",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "minor"
+          },
+          {
+            "id": "section-11-item-5",
+            "text": "Pharmacy personnel wear appropriate, neat gowns different from other staff",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-11-item-6",
+            "text": "Training information of staff available",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-12",
+        "title": "Reference Materials",
+        "items": [
+          {
+            "id": "section-12-item-1",
+            "text": "Availability of current editions of dispensing manual, national treatment guideline, and national formulary",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-12-item-2",
+            "text": "Availability of other reputable reference books",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-12-item-3",
+            "text": "Availability of telephone for medicines information provision",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "minor"
+          }
+        ]
+      },
+      {
+        "id": "section-13",
+        "title": "Medicine Storage Area",
+        "items": [
+          {
+            "id": "section-13-item-1",
+            "text": "Medicines stored correctly under conditions not affected by moisture, temperature, or light (check room temperature, To, RH patterns, thermohygrometer)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-13-item-2",
+            "text": "Medicines stored unpacked",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-13-item-3",
+            "text": "No medicines stored on floors, stairs, and passageways",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-13-item-4",
+            "text": "Storage area in good repair with washable walls",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-13-item-5",
+            "text": "Damaged or expired stocks stored separately from usable stock",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-13-item-6",
+            "text": "Liquid products placed on lower or bottom shelves",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-13-item-7",
+            "text": "Store flammable liquids in original containers",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          }
+        ]
+      },
+      {
+        "id": "section-14",
+        "title": "Equipment and Materials",
+        "items": [
+          {
+            "id": "section-14-item-1",
+            "text": "Refrigerator equipped with suitable thermometer",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-14-item-2",
+            "text": "Functional BP, height, weight measurement, and blood glucose devices (checked calibration)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-14-item-3",
+            "text": "Suitable and hygienic means of counting tablets and capsules",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-14-item-4",
+            "text": "Dispensing balance checked for accuracy",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-14-item-5",
+            "text": "Dispensing labels and envelopes with appropriate information",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-15",
+        "title": "Safety and Security",
+        "items": [
+          {
+            "id": "section-15-item-1",
+            "text": "Fire exit routes clearly indicated",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-15-item-2",
+            "text": "Calibrated and functional fire extinguisher available (check inspection records)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-15-item-3",
+            "text": "First aid package available",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-15-item-4",
+            "text": "Smoking policy / no smoking labels available",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-15-item-5",
+            "text": "Waste appropriately recorded and disposed",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-16",
+        "title": "Quarterly Self-Assessment and Compliance",
+        "items": [
+          {
+            "id": "section-16-item-1",
+            "text": "Conducting self-assessment quarterly and reporting (scoring, strengths, gaps, action plan sent to ZHD/Woreda/Town regulatory body)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-16-item-2",
+            "text": "Pharmacy service provision complies against standards (check score and verification feedback)",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-17",
+        "title": "Tracer Medicines for Sampling during the Audit",
+        "items": [
+          {
+            "id": "section-17-item-1",
+            "text": "Artemether + Lumefantrine 20/120 (Coartem)",
+            "responseType": "availability",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-17-item-2",
+            "text": "Chloroquine tablet and suspension",
+            "responseType": "availability",
+            "optional": false,
+            "severity": "major"
+          },
+          {
+            "id": "section-17-item-3",
             "text": "Primaquine tablet",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-1"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-4",
             "text": "Quinine tablet and injection",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-2"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-5",
             "text": "Artemether injection",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-3"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-6",
             "text": "Artesunate injection",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-4"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-7",
             "text": "Malaria Rapid Test Kit (RDT)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-5"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-8",
             "text": "Azithromycin tablet and suspension",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-6"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-9",
             "text": "Antibiotics (Ceftriaxone inj, Tetracycline 250mg cap, Vancomycin, etc.)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-7"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-10",
             "text": "Tetanus vaccine (TAT)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-8"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-11",
             "text": "NPS Drugs (Morphine, Pethidine, Diazepam)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-9"
+            "severity": "critical"
           },
           {
+            "id": "section-17-item-12",
             "text": "Insulin injection",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-10"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-13",
             "text": "Sildenafil Citrate (different brands)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-11"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-14",
             "text": "Mannitol IV fluid",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-12"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-15",
             "text": "Anti-D",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-13"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-16",
             "text": "Anticancer drugs (Cisplatin, Methotrexate, 5-Fluorouracil)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-14"
+            "severity": "critical"
           },
           {
+            "id": "section-17-item-17",
             "text": "PTU",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-15"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-18",
             "text": "Warfarin",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-16"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-19",
             "text": "Glucose 40%",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-17"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-20",
             "text": "Metronidazole injection",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-18"
+            "severity": "major"
           },
           {
+            "id": "section-17-item-21",
             "text": "Hepatitis B injection",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-19"
+            "severity": "major"
           }
         ]
       }
     ],
-    "itemCount": 19
+    "itemCount": 113
   },
   {
     "id": "dental",
