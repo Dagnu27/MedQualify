@@ -3212,8 +3212,8 @@
   },
   {
     "id": "medium",
-    "title": "Medium Private Clinic",
-    "description": "Medium private clinic inspection / supervision checklist",
+    "title": "Medium Clinic",
+    "description": "Medium clinic inspection / supervision checklist",
     "sourceFile": "Medium_Private_Clinic_Inspection_Checklist.docx",
     "sections": [
       {
@@ -4357,87 +4357,87 @@
     "sections": [
       {
         "id": "section-1",
-        "title": "1. Premises Setup Requirements",
+        "title": "1. Premises & Facility Setup",
         "items": [
           {
-            "text": "Reception, Recording & Waiting area",
+            "text": "Reception, Recording & Waiting area ? 1 room, 20 sq. m",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-1-item-1"
           },
           {
-            "text": "Consultation / Examination room",
+            "text": "Consultation / Examination room ? 1 room, 12 sq. m",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-1-item-2"
           },
           {
-            "text": "Exercise therapy room",
+            "text": "Exercise therapy room ? 1 room, 20 sq. m",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-1-item-3"
           },
           {
-            "text": "Physiotherapy treatment room",
+            "text": "Physiotherapy treatment room ? 2 rooms, 7 sq. m each",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-1-item-4"
           },
           {
-            "text": "Toilet room (male & female)",
+            "text": "Toilet room (male & female) ? 2 rooms; area not specified",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-1-item-5"
           },
           {
-            "text": "General purpose room",
+            "text": "General purpose room ? 1 room",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-1-item-6"
           },
           {
-            "text": "Store facility or cabinet",
+            "text": "Store facility or cabinet ? provide storage for equipment and supplies",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-1-item-7"
           },
           {
-            "text": "Incinerator (fixed / mobile)",
+            "text": "Incinerator (fixed / mobile) ? 1",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-1-item-8"
           },
           {
-            "text": "Basic imaging service (optional)",
+            "text": "Basic imaging service ? as per ERPA requirements (optional)",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-1-item-9"
           },
           {
-            "text": "Prosthetic and orthotic (optional)",
+            "text": "Prosthetic and orthotic service / facility (optional)",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-1-item-10"
           },
           {
-            "text": "Machine room",
+            "text": "Machine room ? 1 room, 25 sq. m",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-1-item-11"
           },
           {
-            "text": "Casting & first fitting room",
+            "text": "Casting & first fitting room ? 1 room, 9 sq. m",
             "responseType": "standard",
             "optional": false,
             "severity": "",
@@ -4450,77 +4450,77 @@
         "title": "2. Professional Staffing Requirements",
         "items": [
           {
-            "text": "Doctor of Physiotherapy (DPT) or Physiotherapy Specialist (MSc) or Physiotherapy Professional (BSc)",
+            "text": "Doctor of Physiotherapy (DPT), Physiotherapy Specialist (MSc), or Physiotherapy Professional (BSc) ? 1 required",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-1"
           },
           {
-            "text": "Physiotherapy technician (Diploma) (optional)",
+            "text": "Physiotherapy technician (Diploma) ? 1 optional",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-2-item-2"
           },
           {
-            "text": "Professional / Clinical nurse",
+            "text": "Professional / Clinical nurse ? 1 required",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-3"
           },
           {
-            "text": "Exercise therapist (Optional)",
+            "text": "Exercise therapist ? 1 optional",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-2-item-4"
           },
           {
-            "text": "Sport science professionals (optional)",
+            "text": "Sport science professional ? 1 optional",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-2-item-5"
           },
           {
-            "text": "Exercise physiologist (optional)",
+            "text": "Exercise physiologist ? 1 optional",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-2-item-6"
           },
           {
-            "text": "Prosthetic and orthotic (optional)",
+            "text": "Prosthetic and orthotic professional ? 1 optional",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-2-item-7"
           },
           {
-            "text": "Radiological technologist / radiography technician (optional)",
+            "text": "Radiological technologist / radiography technician ? 1 optional",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-2-item-8"
           },
           {
-            "text": "Radiologist (optional)",
+            "text": "Radiologist ? 1 optional",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-2-item-9"
           },
           {
-            "text": "Cleaner / janitor",
+            "text": "Cleaner / janitor ? 1 required",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-2-item-10"
           },
           {
-            "text": "Receptionist",
+            "text": "Receptionist ? 1 required",
             "responseType": "standard",
             "optional": false,
             "severity": "",
@@ -4530,10 +4530,24 @@
       },
       {
         "id": "section-4",
-        "title": "1. Examination Tools & Diagnostic Supplies",
+        "title": "3. Examination Tools & Diagnostic Supplies",
         "items": [
           {
-            "text": "Table",
+            "id": "section-4-new-01-examination-couch-or-bed-adjustable-non-adjustable",
+            "text": "Examination couch or bed (adjustable / non-adjustable)",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-new-02-therapist-stool",
+            "text": "Therapist stool",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "text": "Examination table",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -4589,7 +4603,7 @@
             "id": "section-4-item-8"
           },
           {
-            "text": "Disposable glove",
+            "text": "Disposable gloves",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -4613,8 +4627,22 @@
       },
       {
         "id": "section-5",
-        "title": "2. Exercise Therapy Tools",
+        "title": "4. Exercise Therapy & Mobility Equipment",
         "items": [
+          {
+            "id": "section-5-new-01-physiotherapy-exercise-mat",
+            "text": "Physiotherapy / exercise mat",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-new-02-walking-aids-adjustable-crutches-and-walking-frame",
+            "text": "Walking aids (adjustable crutches and walking frame)",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
           {
             "text": "Balance boards",
             "responseType": "availability",
@@ -4630,35 +4658,35 @@
             "id": "section-5-item-2"
           },
           {
-            "text": "Physio ball (one big and one small size)",
+            "text": "Physio balls (one large and one small)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-3"
           },
           {
-            "text": "Stationary Bike",
+            "text": "Stationary bike",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-4"
           },
           {
-            "text": "Adjustable parallel bar",
+            "text": "Adjustable parallel bars",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-5"
           },
           {
-            "text": "Different resistance TheraBand",
+            "text": "Resistance TheraBands (different resistance levels)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-5-item-6"
           },
           {
-            "text": "Correction Mirror",
+            "text": "Correction mirror",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -4667,169 +4695,660 @@
         ]
       },
       {
-        "id": "section-10",
-        "title": "7. Optional Equipment, Prosthetics & Orthotics Materials",
+        "id": "section-5-treatment",
+        "title": "5. Physiotherapy Treatment Room Equipment",
         "items": [
+          {
+            "id": "section-5-treatment-new-01-treatment-couch-or-bed-adjustable-non-adjustable",
+            "text": "Treatment couch or bed (adjustable / non-adjustable)",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-treatment-new-02-therapist-stool",
+            "text": "Therapist stool",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-5-modalities",
+        "title": "6. Electrotherapy & Physical Modalities",
+        "items": [
+          {
+            "id": "section-5-modalities-new-01-multiple-mode-electrical-stimulator-ems-tens",
+            "text": "Multiple-mode electrical stimulator (EMS / TENS)",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-modalities-new-02-thermal-modality-equipment",
+            "text": "Thermal modality equipment",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-modalities-new-03-therapeutic-ultrasound-equipment",
+            "text": "Therapeutic ultrasound equipment",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-5-clinic-support",
+        "title": "7. First Aid & Patient Education",
+        "items": [
+          {
+            "id": "section-5-clinic-support-new-01-first-aid-kit",
+            "text": "First-aid kit",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-clinic-support-new-02-educational-posters-and-pictures",
+            "text": "Educational posters and pictures",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-10-exercise-options",
+        "title": "8. Optional Exercise & Assessment Equipment",
+        "items": [
+          {
+            "id": "section-10-exercise-options-new-01-anatomical-skeleton-models",
+            "text": "Anatomical skeleton models",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-exercise-options-new-02-hand-exercise-tools",
+            "text": "Hand exercise tools",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
           {
             "text": "Passive exercise equipment",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-1"
           },
           {
             "text": "Medicine balls",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-2"
           },
           {
             "text": "Inclinometer",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-3"
           },
           {
             "text": "Foam roller or bolsters",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-4"
           },
           {
             "text": "Dynamometer",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-5"
           },
           {
             "text": "Treadmill",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-6"
           },
           {
             "text": "Adjustable overhead pulleys",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-7"
           },
           {
             "text": "Cervical & lumbar traction set",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-8"
           },
           {
-            "text": "Adjustable height exercise steps",
+            "text": "Adjustable-height exercise steps",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-9"
           },
           {
             "text": "Gait belts",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-10"
           },
           {
-            "text": "Fixed Wall bars",
+            "text": "Fixed wall bars",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-11"
           },
           {
             "text": "Trigger point releasers",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-12"
           },
           {
-            "text": "Free weights / Dumbbells in pairs",
+            "text": "Free weights / dumbbells (pairs)",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-13"
           },
           {
-            "text": "Cotton rolls, POP, gauze bandage, POP scissors",
+            "text": "Different size elastic / ACE wrap bandage",
             "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-10-item-14"
-          },
-          {
-            "text": "Weight Cuff weights (paired weights)",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-10-item-15"
-          },
-          {
-            "text": "Elastic / ACE wrap bandage",
-            "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-16"
           },
           {
+            "text": "Weight cuff weights (paired set)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": "",
+            "id": "section-10-item-15"
+          },
+          {
+            "text": "Multi-gym equipment",
+            "responseType": "availability",
+            "optional": true,
+            "severity": "",
+            "id": "section-10-item-20"
+          }
+        ]
+      },
+      {
+        "id": "section-10-neuro-options",
+        "title": "9. Optional Neurological Testing Equipment",
+        "items": [
+          {
             "text": "Nerve conduction test (NCT)",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-17"
           },
           {
-            "text": "Neurological testing instruments (monofilament)",
+            "text": "Neurological testing instruments (including monofilament)",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-18"
           },
           {
             "text": "Electromyography (EMG)",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-19"
-          },
+          }
+        ]
+      },
+      {
+        "id": "section-10-prosthetic-tools",
+        "title": "10. Optional Prosthetics & Orthotics Workshop Equipment",
+        "items": [
           {
-            "text": "Multi Gym Equipment",
+            "text": "Oven",
             "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-10-item-20"
-          },
-          {
-            "text": "Prosthesis & Orthotics Workshop tools: Oven, Bench vice, Leather sewing machine, Tool case, Vacuum pump, Scissor, Grinder stand, Hack saw, Suction (dust aspirator), Drill conical, Bench Drill, Riveting bar, Jig saw, Safety equipment, Saw oscillating (cast cutter), Glove (PU coated), Heat gun, Sand drum, Welding Iron, Contouring instrument (Bender), Welding mirror, Revolving Hole puncher, Measuring tape, Caliper gauge, Rivet setter",
-            "responseType": "availability",
-            "optional": false,
+            "optional": true,
             "severity": "",
             "id": "section-10-item-21"
           },
           {
-            "text": "Consumables for Prosthesis & Orthotics: EVA, Indelible pencil, Homopolymer (PP), Plaster mixing bowl, Gypsum Powder, Velcro, Stanley surform, Glue, Sewing needles, Foot (different size), Ring half round (D-Ring), Module system, Knife (cutter), Ankle/Knee/Hip joint, Rivet tubular iron, Side bar, Copper rivet, Cotton stockinet, Sand paper, Cast cutter blade, Jig saw blade, Hack saw blade, Drill bit",
+            "id": "section-10-prosthetic-tools-new-02-bench-vice",
+            "text": "Bench vice",
             "responseType": "availability",
-            "optional": false,
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-03-leather-sewing-machine",
+            "text": "Leather sewing machine",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-04-tool-case-tool-craft",
+            "text": "Tool case (tool craft)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-05-vacuum-pump-with-connection-kit",
+            "text": "Vacuum pump with connection kit",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-06-scissors",
+            "text": "Scissors",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-07-grinder-stand",
+            "text": "Grinder stand",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-08-hack-saw",
+            "text": "Hack saw",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-09-suction-dust-aspirator",
+            "text": "Suction (dust aspirator)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-10-conical-drill-different-types",
+            "text": "Conical drill (different types)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-11-bench-drill",
+            "text": "Bench drill",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-12-riveting-bar",
+            "text": "Riveting bar",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-13-jig-saw",
+            "text": "Jig saw",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-14-protective-safety-equipment",
+            "text": "Protective safety equipment",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-15-oscillating-saw-cast-cutter",
+            "text": "Oscillating saw (cast cutter)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-16-full-palm-nylon-glove-pu-coated",
+            "text": "Full-palm nylon glove (PU coated)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-17-heat-gun",
+            "text": "Heat gun",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-18-sand-drum-different-types",
+            "text": "Sand drum (different types)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-19-electrical-welding-iron",
+            "text": "Electrical welding iron",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-20-contouring-instrument-bender",
+            "text": "Contouring instrument (bender)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-21-welding-mirror",
+            "text": "Welding mirror",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-22-revolving-hole-puncher",
+            "text": "Revolving hole puncher",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-23-measuring-tape",
+            "text": "Measuring tape",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-24-contouring-instrument-side-bar-bender",
+            "text": "Contouring instrument (side bar bender)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-25-caliper-gauge",
+            "text": "Caliper gauge",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-tools-new-26-rivet-setter-and-header",
+            "text": "Rivet setter and header",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-10-prosthetic-consumables",
+        "title": "11. Optional Prosthetics & Orthotics Consumables",
+        "items": [
+          {
+            "text": "Cotton rolls",
+            "responseType": "availability",
+            "optional": true,
+            "severity": "",
+            "id": "section-10-item-14"
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-02-plaster-of-paris-pop",
+            "text": "Plaster of Paris (POP)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-03-gauze-bandage",
+            "text": "Gauze bandage",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-04-pop-scissors",
+            "text": "POP scissors",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "text": "EVA",
+            "responseType": "availability",
+            "optional": true,
             "severity": "",
             "id": "section-10-item-22"
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-06-indelible-pencil",
+            "text": "Indelible pencil",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-07-homopolymer-pp-locally-unavailable",
+            "text": "Homopolymer (PP; locally unavailable)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-08-leather",
+            "text": "Leather",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-09-plaster-mixing-bowl",
+            "text": "Plaster mixing bowl",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-10-gypsum-powder",
+            "text": "Gypsum powder",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-11-velcro",
+            "text": "Velcro",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-12-stanley-surform-different-types",
+            "text": "Stanley surform (different types)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-13-glue",
+            "text": "Glue",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-14-sewing-needles",
+            "text": "Sewing needles",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-15-foot-different-sizes",
+            "text": "Foot (different sizes)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-16-ring-half-round-d-ring",
+            "text": "Ring half-round (D-ring)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-17-module-system-different-types-and-sizes",
+            "text": "Module system (different types and sizes)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-18-loop",
+            "text": "Loop",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-19-knife-cutter",
+            "text": "Knife (cutter)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-20-ankle-joint",
+            "text": "Ankle joint",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-21-knee-joint",
+            "text": "Knee joint",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-22-hip-joint",
+            "text": "Hip joint",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-23-tubular-iron-rivet-nickel-plated",
+            "text": "Tubular iron rivet (nickel-plated)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-24-side-bar",
+            "text": "Side bar",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-25-copper-rivet",
+            "text": "Copper rivet",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-26-cotton-stockinet",
+            "text": "Cotton stockinet",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-27-sandpaper-different-types",
+            "text": "Sandpaper (different types)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-28-cast-cutter-blade",
+            "text": "Cast cutter blade",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-29-jig-saw-blade",
+            "text": "Jig saw blade",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-30-hack-saw-blade",
+            "text": "Hack saw blade",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-10-prosthetic-consumables-new-31-drill-bit",
+            "text": "Drill bit",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
           }
         ]
       },
       {
         "id": "section-11",
-        "title": "8. Cleaning Products & Sanitation",
+        "title": "12. Cleaning Products & Sanitation",
         "items": [
+          {
+            "id": "section-11-new-01-floor-cleaning-brush-optional",
+            "text": "Floor-cleaning brush (optional)",
+            "responseType": "availability",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-11-new-02-floor-wiping-brush",
+            "text": "Floor-wiping brush",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
           {
             "text": "Counter brush",
             "responseType": "availability",
@@ -4845,35 +5364,35 @@
             "id": "section-11-item-2"
           },
           {
-            "text": "Glass cleaning / wiping brush",
+            "text": "Glass-cleaning / wiping brush",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-11-item-3"
           },
           {
-            "text": "Scrappers",
+            "text": "Scrapers",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-11-item-4"
           },
           {
-            "text": "Dustbins paddles",
+            "text": "Dustbin paddles",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-11-item-5"
           },
           {
-            "text": "Plastic Mug",
+            "text": "Plastic mug",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-11-item-6"
           },
           {
-            "text": "Plastic Bucket",
+            "text": "Plastic bucket",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -4887,7 +5406,7 @@
             "id": "section-11-item-8"
           },
           {
-            "text": "Wheel barrow",
+            "text": "Wheelbarrow",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -4929,14 +5448,14 @@
             "id": "section-11-item-14"
           },
           {
-            "text": "Rat trapping cage",
+            "text": "Rat-trapping cage",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-11-item-15"
           },
           {
-            "text": "Bed pan washer",
+            "text": "Bed-pan washer",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -4966,39 +5485,11 @@
         ]
       },
       {
-        "id": "section-12",
-        "title": "9. Hand Hygiene & PPE",
+        "id": "section-12-hand-hygiene",
+        "title": "13. Hand Hygiene Supplies",
         "items": [
           {
-            "text": "Surgical glove",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-12-item-1"
-          },
-          {
-            "text": "Examination glove",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-12-item-2"
-          },
-          {
-            "text": "Goggle",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-12-item-3"
-          },
-          {
-            "text": "Different masks",
-            "responseType": "availability",
-            "optional": false,
-            "severity": "",
-            "id": "section-12-item-4"
-          },
-          {
-            "text": "Hand washing sinks (all service areas)",
+            "text": "Hand-washing sinks (all service areas)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -5031,6 +5522,54 @@
             "optional": false,
             "severity": "",
             "id": "section-12-item-9"
+          }
+        ]
+      },
+      {
+        "id": "section-12-ppe",
+        "title": "14. Personal Protective Equipment (PPE)",
+        "items": [
+          {
+            "id": "section-12-ppe-new-01-gown",
+            "text": "Gown",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-12-ppe-new-02-heavy-duty-gloves",
+            "text": "Heavy-duty gloves",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "text": "Surgical gloves",
+            "responseType": "availability",
+            "optional": false,
+            "severity": "",
+            "id": "section-12-item-1"
+          },
+          {
+            "text": "Examination gloves",
+            "responseType": "availability",
+            "optional": false,
+            "severity": "",
+            "id": "section-12-item-2"
+          },
+          {
+            "text": "Goggles",
+            "responseType": "availability",
+            "optional": false,
+            "severity": "",
+            "id": "section-12-item-3"
+          },
+          {
+            "text": "Different types of masks",
+            "responseType": "availability",
+            "optional": false,
+            "severity": "",
+            "id": "section-12-item-4"
           },
           {
             "text": "Head cover",
@@ -5063,7 +5602,7 @@
         ]
       }
     ],
-    "itemCount": 95
+    "itemCount": 166
   },
   {
     "id": "primary",
@@ -5076,74 +5615,80 @@
         "title": "2. General Service Requirements",
         "items": [
           {
+            "id": "section-2-item-1",
             "text": "The primary clinic shall have a minimum of the following premises set up (see details below).",
             "responseType": "standard",
             "optional": false,
-            "severity": "critical",
-            "id": "section-2-item-1"
+            "severity": "critical"
           },
           {
+            "id": "section-2-item-2",
             "text": "The Primary clinic shall have direct access to examination room for emergency.",
             "responseType": "standard",
             "optional": false,
-            "severity": "major",
-            "id": "section-2-item-2"
+            "severity": "major"
           },
           {
+            "id": "section-2-item-3",
             "text": "The Primary clinic shall have hand washing basin/ facility at examination and treatment room.",
             "responseType": "standard",
             "optional": false,
-            "severity": "major",
-            "id": "section-2-item-3"
+            "severity": "major"
           },
           {
-            "text": "There shall be a note in visually accessible area that details the facilities working hours and list of services available.",
+            "id": "section-2-item-4",
+            "text": "There shall be a note in a visually accessible area that details the facility working hours and list of services available.",
             "responseType": "standard",
             "optional": false,
-            "severity": "major",
-            "id": "section-2-item-4"
-          },
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "id": "section-2-premises",
+        "title": "Premises Setup Requirements (Item #1)",
+        "items": [
           {
-            "text": "Reception, Registry / Recording & Waiting area",
+            "id": "section-2-item-5",
+            "text": "Reception, Registry / Recording & Waiting area ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-5"
+            "severity": ""
           },
           {
-            "text": "Examination room",
+            "id": "section-2-item-6",
+            "text": "Examination room ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-6"
+            "severity": ""
           },
           {
-            "text": "Treatment / procedure / injection room",
+            "id": "section-2-item-7",
+            "text": "Treatment / procedure / injection room ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-7"
+            "severity": ""
           },
           {
-            "text": "Toilet",
+            "id": "section-2-item-8",
+            "text": "Toilets ? 2; 8 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-8"
+            "severity": ""
           },
           {
-            "text": "Incinerator (mobile / fixed) (optional)",
+            "id": "section-2-item-9",
+            "text": "Incinerator (mobile / fixed) (optional) ? 1",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-2-item-9"
+            "severity": ""
           },
           {
-            "text": "Area for placenta pit (optional)",
+            "id": "section-2-item-10",
+            "text": "Area for placenta pit (optional) ? 1",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-2-item-10"
+            "severity": ""
           }
         ]
       },
@@ -5152,248 +5697,342 @@
         "title": "3. Staffing Requirements",
         "items": [
           {
-            "text": "The primary clinic shall have the required staffing (see details below).",
+            "id": "section-3-item-1",
+            "text": "The primary clinic shall have the required staffing (see detailed staffing requirements below).",
             "responseType": "standard",
             "optional": false,
-            "severity": "critical",
-            "id": "section-3-item-1"
+            "severity": "critical"
           },
           {
-            "text": "Nurses",
+            "id": "section-3-item-2",
+            "text": "Nurses ? 2 required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-2"
+            "severity": ""
           },
           {
-            "text": "Receptionist",
+            "id": "section-3-item-3",
+            "text": "Receptionist ? 1 required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-3"
+            "severity": ""
           },
           {
-            "text": "Cleaner",
+            "id": "section-3-item-4",
+            "text": "Cleaner ? 1 required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-4"
+            "severity": ""
           }
         ]
       },
       {
         "id": "section-4",
-        "title": "4. Infection Prevention & Control (IPC) Supplies",
+        "title": "4. Infection Prevention & Control (IPC) Supplies - a) Waste Management Equipment & Supplies",
         "items": [
           {
+            "id": "section-4-item-1",
             "text": "The primary clinic shall have adequate supplies and equipment needed for IPC practice.",
             "responseType": "standard",
             "optional": false,
-            "severity": "major",
-            "id": "section-4-item-1"
+            "severity": "major"
           },
           {
+            "id": "section-4-new-1-safety-boxes",
+            "text": "Safety boxes",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-new-2-garbage-bins",
+            "text": "Garbage bins",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-2",
             "text": "Wheelbarrows",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-2"
+            "severity": ""
           },
           {
+            "id": "section-4-item-3",
             "text": "Large garbage bin",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-3"
+            "severity": ""
           },
           {
+            "id": "section-4-item-4",
             "text": "Plastic garbage bags",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-4"
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-4-cleaning",
+        "title": "4. Infection Prevention & Control (IPC) Supplies - b) Cleaning Supplies",
+        "items": [
+          {
+            "id": "section-4-cleaning-new-1-mop",
+            "text": "Mop",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
+            "id": "section-4-cleaning-new-2-bucket",
+            "text": "Bucket",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-5",
             "text": "Broom",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-5"
+            "severity": ""
           },
           {
+            "id": "section-4-item-6",
             "text": "Dust mop",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-6"
+            "severity": ""
           },
           {
+            "id": "section-4-item-7",
             "text": "Cleaning cloth",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-7"
+            "severity": ""
           },
           {
+            "id": "section-4-item-8",
             "text": "Detergent",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-8"
+            "severity": ""
           },
           {
+            "id": "section-4-item-9",
             "text": "Bleach",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-9"
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-4-processing",
+        "title": "4. Infection Prevention & Control (IPC) Supplies - c) Instrument Processing",
+        "items": [
+          {
+            "id": "section-4-processing-new-1-autoclaves-and-steam-sterilizers",
+            "text": "Autoclaves and steam sterilizers",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
+            "id": "section-4-processing-new-2-test-strips",
+            "text": "Test strips",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-10",
             "text": "Boiler",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-10"
+            "severity": ""
           },
           {
+            "id": "section-4-item-11",
             "text": "Oven",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-11"
+            "severity": ""
           },
           {
+            "id": "section-4-item-12",
             "text": "Storage shelves for medical equipment",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-12"
+            "severity": ""
           },
           {
+            "id": "section-4-item-13",
             "text": "Chemicals & disinfectants (0.5% chlorine solution)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-13"
+            "severity": ""
           },
           {
+            "id": "section-4-item-14",
             "text": "Brushes (toothbrush for small items)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-14"
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-4-hand-hygiene",
+        "title": "4. Infection Prevention & Control (IPC) Supplies - d) Hand Hygiene",
+        "items": [
+          {
+            "id": "section-4-hand-hygiene-new-1-sinks-ward-other-areas",
+            "text": "Sinks (ward & other areas)",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
+            "id": "section-4-hand-hygiene-new-2-water-container-with-faucet",
+            "text": "Water container with faucet",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-15",
             "text": "Soap dispenser",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-15"
+            "severity": ""
           },
           {
+            "id": "section-4-item-16",
             "text": "Alcohol based hand rub",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-16"
+            "severity": ""
           },
           {
-            "text": "Personal Towels",
+            "id": "section-4-item-17",
+            "text": "Personal towels",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-17"
+            "severity": ""
           },
           {
-            "text": "Paper Towels",
+            "id": "section-4-item-18",
+            "text": "Paper towels",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-18"
-          },
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-4-ppe",
+        "title": "4. Infection Prevention & Control (IPC) Supplies - e) Personal Protective Equipment (PPE)",
+        "items": [
           {
-            "text": "Latex or Nitrile glove",
+            "id": "section-4-ppe-new-1-heavy-duty-gloves",
+            "text": "Heavy-duty gloves",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-19"
+            "severity": ""
           },
           {
+            "id": "section-4-ppe-new-2-surgical-gloves",
+            "text": "Surgical gloves",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-19",
+            "text": "Latex or nitrile gloves",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-20",
             "text": "Eye shield",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-20"
+            "severity": ""
           },
           {
-            "text": "Goggle",
+            "id": "section-4-item-21",
+            "text": "Goggles",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-21"
+            "severity": ""
           },
           {
+            "id": "section-4-item-22",
             "text": "Visors",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-22"
+            "severity": ""
           },
           {
+            "id": "section-4-item-23",
             "text": "Dust mask",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-23"
+            "severity": ""
           },
           {
+            "id": "section-4-item-24",
             "text": "Respiratory mask",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-24"
+            "severity": ""
           },
           {
+            "id": "section-4-item-25",
             "text": "Other types of face mask",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-25"
+            "severity": ""
           },
           {
+            "id": "section-4-item-26",
             "text": "Plastic apron",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-26"
+            "severity": ""
           },
           {
+            "id": "section-4-item-27",
             "text": "Boots",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-27"
+            "severity": ""
           },
           {
+            "id": "section-4-item-28",
             "text": "Other protective shoes",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-28"
+            "severity": ""
           },
           {
+            "id": "section-4-item-29",
             "text": "Caps",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-29"
+            "severity": ""
           },
           {
+            "id": "section-4-item-30",
             "text": "Face shield",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-30"
+            "severity": ""
           }
         ]
       },
@@ -5402,344 +6041,379 @@
         "title": "5. Sanitation and Waste Management",
         "items": [
           {
+            "id": "section-5-item-1",
             "text": "Infectious and medical wastes shall be handled and managed according to recent guidelines.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
-            "id": "section-5-item-1"
+            "scored": false
           },
           {
+            "id": "section-5-item-2",
             "text": "Segregation of health care waste (separate types, colored receptacles, at source, 3-bin system).",
             "responseType": "standard",
             "optional": false,
-            "severity": "major",
-            "id": "section-5-item-2"
+            "severity": "major"
           },
           {
+            "id": "section-5-item-3",
             "text": "The clinic shall have a medical waste management plan (storage, segregation, transport, disposal).",
             "responseType": "standard",
             "optional": false,
-            "severity": "minor",
-            "id": "section-5-item-3"
+            "severity": "minor"
           },
           {
+            "id": "section-5-item-4",
             "text": "Supportive sanitation measures (clean water, hand hygiene, sterilization, PPE alternatives).",
             "responseType": "standard",
             "optional": false,
-            "severity": "major",
-            "id": "section-5-item-4"
+            "severity": "major"
           },
           {
+            "id": "section-5-item-5",
             "text": "Sanitary system (flushing toilets, plumbing stores, sanitary office, incinerator, pits, secured solid waste area).",
             "responseType": "standard",
             "optional": false,
-            "severity": "major",
-            "id": "section-5-item-5"
+            "severity": "major"
           },
           {
+            "id": "section-5-item-6",
             "text": "The primary clinic shall officially designate staff in charge of handling waste on a regular basis.",
             "responseType": "standard",
             "optional": false,
-            "severity": "major",
-            "id": "section-5-item-6"
+            "severity": "major"
+          },
+          {
+            "id": "section-6-item-41",
+            "text": "Equipment and supplies required for sanitation activities: incinerator, safety boxes, leak-proof containers, trolley, PPE, autoclave, pressure cooker, cleaning solutions, mops, and dustbins.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "major"
           }
         ]
       },
       {
         "id": "section-6",
-        "title": "6. Equipment, Instruments & Consumables",
+        "title": "6. Equipment, Instruments & Consumables - a) Equipment & Instruments",
         "items": [
           {
+            "id": "section-6-new-1-stethoscope",
+            "text": "Stethoscope",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-6-new-2-thermometer-digital-mercury",
+            "text": "Thermometer (digital/mercury)",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-6-item-1",
             "text": "BP apparatus (sphygmomanometer with stethoscope)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-1"
+            "severity": ""
           },
           {
+            "id": "section-6-item-2",
             "text": "Measuring tape",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-2"
+            "severity": ""
           },
           {
+            "id": "section-6-item-3",
             "text": "Wrist watch / wall clock",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-3"
+            "severity": ""
           },
           {
+            "id": "section-6-item-4",
             "text": "Weighing scale",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-4"
+            "severity": ""
           },
           {
+            "id": "section-6-item-5",
             "text": "Otoscope set",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-5"
+            "severity": ""
           },
           {
+            "id": "section-6-item-6",
             "text": "Glucometer",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-6"
+            "severity": ""
           },
           {
+            "id": "section-6-item-7",
             "text": "Examination light",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-7"
+            "severity": ""
           },
           {
+            "id": "section-6-item-8",
             "text": "Delivery set",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-8"
+            "severity": ""
           },
           {
+            "id": "section-6-item-9",
             "text": "Dressing set",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-9"
+            "severity": ""
           },
           {
+            "id": "section-6-item-10",
             "text": "Minor suturing set",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-10"
+            "severity": ""
           },
           {
+            "id": "section-6-item-11",
             "text": "Enema set",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-11"
+            "severity": ""
           },
           {
+            "id": "section-6-item-12",
             "text": "Kidney basin",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-12"
+            "severity": ""
           },
           {
+            "id": "section-6-item-13",
             "text": "Plastic apron",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-13"
+            "severity": ""
           },
           {
+            "id": "section-6-item-14",
             "text": "Drapes / Rubber sheets",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-14"
+            "severity": ""
           },
           {
+            "id": "section-6-item-15",
             "text": "Suction ball (optional)",
             "responseType": "availability",
             "optional": true,
-            "severity": "",
-            "id": "section-6-item-15"
+            "severity": ""
           },
           {
+            "id": "section-6-item-16",
             "text": "Waste basket",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-16"
+            "severity": ""
           },
           {
+            "id": "section-6-item-17",
             "text": "Sharp disposal boxes",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-17"
+            "severity": ""
           },
           {
+            "id": "section-6-item-18",
             "text": "Pickup forceps with jar",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-18"
+            "severity": ""
           },
           {
-            "text": "Sterilizer (steam autoclave/hot air oven)",
+            "id": "section-6-item-19",
+            "text": "Sterilizer (steam autoclave / hot air oven)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-19"
+            "severity": ""
           },
           {
+            "id": "section-6-item-20",
             "text": "Examination couch",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-20"
+            "severity": ""
           },
           {
+            "id": "section-6-item-21",
             "text": "Fetoscope",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-21"
+            "severity": ""
           },
           {
+            "id": "section-6-item-22",
             "text": "IV stand",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-22"
+            "severity": ""
           },
           {
-            "text": "Storage shelves for equipment/medicines",
+            "id": "section-6-item-23",
+            "text": "Storage shelves for equipment / medicines",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-23"
+            "severity": ""
           },
           {
+            "id": "section-6-item-24",
             "text": "Recording & reporting materials",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-24"
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-6-consumables",
+        "title": "6. Equipment, Instruments & Consumables - b) Consumables",
+        "items": [
+          {
+            "id": "section-6-consumables-new-1-disposable-glove",
+            "text": "Disposable glove",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
+            "id": "section-6-consumables-new-2-surgical-glove",
+            "text": "Surgical glove",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-6-item-25",
             "text": "Alcohol / Iodine / Savlon",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-25"
+            "severity": ""
           },
           {
+            "id": "section-6-item-26",
             "text": "Gauze",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-26"
+            "severity": ""
           },
           {
+            "id": "section-6-item-27",
             "text": "Bandage",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-27"
+            "severity": ""
           },
           {
+            "id": "section-6-item-28",
             "text": "Cotton",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-28"
+            "severity": ""
           },
           {
+            "id": "section-6-item-29",
             "text": "IV Cannulae",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-29"
+            "severity": ""
           },
           {
+            "id": "section-6-item-30",
             "text": "Adhesive tape",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-30"
+            "severity": ""
           },
           {
+            "id": "section-6-item-31",
             "text": "Surgical blades",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-31"
+            "severity": ""
           },
           {
+            "id": "section-6-item-32",
             "text": "Tongue depressor",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-32"
+            "severity": ""
           },
           {
+            "id": "section-6-item-33",
             "text": "Splints (locally produced/adapted)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-33"
+            "severity": ""
           },
           {
+            "id": "section-6-item-34",
             "text": "Foley Catheters",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-34"
+            "severity": ""
           },
           {
+            "id": "section-6-item-35",
             "text": "Tourniquets",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-35"
+            "severity": ""
           },
           {
+            "id": "section-6-item-36",
             "text": "KY jelly",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-36"
+            "severity": ""
           },
           {
+            "id": "section-6-item-37",
             "text": "Dressing packs",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-37"
+            "severity": ""
           },
           {
+            "id": "section-6-item-38",
             "text": "Steri-strips for steam autoclave",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-38"
+            "severity": ""
           },
           {
+            "id": "section-6-item-39",
             "text": "Disinfectant chemicals (Bleach)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-39"
+            "severity": ""
           },
           {
+            "id": "section-6-item-40",
             "text": "Disposable syringe with needle",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-6-item-40"
-          },
-          {
-            "text": "Equipment and supplies required for sanitation activities (Incinerator, safety boxes, leak-proof containers, trolley, PPE, autoclave, pressure cooker, cleaning solutions, mops and dustbins).",
-            "responseType": "standard",
-            "optional": false,
-            "severity": "major",
-            "id": "section-6-item-41"
+            "severity": ""
           }
         ]
       }
     ],
-    "itemCount": 91
+    "itemCount": 105
   },
   {
     "id": "ophthalmology",
@@ -5749,45 +6423,38 @@
     "sections": [
       {
         "id": "section-3",
-        "title": "A. Practice Standards",
+        "title": "A. Clinical Service & Practice Standards",
         "items": [
           {
-            "text": "The ophthalmology specialty clinic shall provide ophthalmology services at outpatient level only at least during regular working hours.",
+            "text": "The ophthalmology specialty clinic shall provide ophthalmology services at outpatient level only, at least during regular working hours.",
             "responseType": "standard",
             "optional": false,
             "severity": "critical",
             "id": "section-3-item-1"
           },
           {
-            "text": "The medical assessment for eye shall include at least: / a) Comprehensive medical and social history, / b) Physical examination for ophthalmology including at least visual acuity, vital signs (BP), clinical exam pertinent to illness, slit lamp/fundo-ophthalmoscope exam, / c) Diagnostic impressions, / d) Visual Field test, / e) Intra ocular pressure (IOP)/Tonometry, / f) Keratometry and ultrasound (optional).",
-            "responseType": "standard",
-            "optional": true,
-            "severity": "critical",
-            "id": "section-3-item-2"
-          },
-          {
-            "text": "There shall be minor surgical procedures with local and regional anesthesia as stated by minor surgical standards of this document.",
+            "text": "Minor surgical procedures with local and regional anesthesia shall follow the minor surgical standards in this document.",
             "responseType": "standard",
             "optional": false,
             "severity": "critical",
             "id": "section-3-item-3"
           },
           {
-            "text": "There shall be optometry service available in the clinic.",
+            "text": "Optometry service shall be available in the clinic.",
             "responseType": "standard",
             "optional": false,
             "severity": "critical",
             "id": "section-3-item-4"
           },
           {
-            "text": "The Ophthalmology Service shall be provided by a licensed ophthalmologist.",
+            "text": "Ophthalmology services shall be provided by a licensed ophthalmologist.",
             "responseType": "standard",
             "optional": false,
             "severity": "critical",
             "id": "section-3-item-5"
           },
           {
-            "text": "The clinic shall have client medical records, registers and reporting formats as per the national system.",
+            "text": "Client medical records, registers, and reporting formats shall follow the national system.",
             "responseType": "standard",
             "optional": false,
             "severity": "critical",
@@ -5796,102 +6463,157 @@
         ]
       },
       {
-        "id": "section-4",
-        "title": "B. Premises Standards",
+        "id": "section-3-assessment",
+        "title": "B. Ophthalmic Assessment Requirements",
         "items": [
           {
-            "text": "The ophthalmology/Eye clinic shall have rooms (outpatient service areas) as specified below (see detailed breakdown).",
+            "text": "A comprehensive medical and social history shall be obtained for each eye patient.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical",
+            "id": "section-3-item-2"
+          },
+          {
+            "id": "section-3-new-ophthalmology-examination-shall-include-visual-acuity-vital-signs-bp-as-necessary-and-clinical-examination-pertinent-to-the-illness",
+            "text": "Physical eye examination shall include visual acuity, blood pressure when necessary, and clinical examination pertinent to the illness.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-3-new-ophthalmology-examination-shall-include-slit-lamp-and-or-fundo-ophthalmoscope-examination",
+            "text": "Eye examination shall include slit-lamp and/or fundo-ophthalmoscope examination.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-3-assessment-diagnostic-impression",
+            "text": "A diagnostic impression shall be documented.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-3-assessment-visual-field",
+            "text": "Visual field testing shall be included in the eye assessment.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-3-assessment-iop-tonometry",
+            "text": "Intraocular pressure (IOP) shall be measured by tonometry.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": "critical"
+          },
+          {
+            "id": "section-3-new-keratometry-and-ultrasound-shall-be-available-when-indicated-optional",
+            "text": "Keratometry and ocular ultrasound shall be available when indicated (optional).",
+            "responseType": "standard",
+            "optional": true,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "C. Premises & Facility Requirements",
+        "items": [
+          {
+            "text": "The ophthalmology / eye clinic shall have the outpatient service rooms listed below.",
             "responseType": "standard",
             "optional": false,
             "severity": "critical",
             "id": "section-4-item-1"
           },
           {
-            "text": "A Corridor with a minimum of 6m long for visual acuity examination.",
+            "text": "A corridor at least 6 m long shall be available for visual acuity examination.",
             "responseType": "standard",
             "optional": false,
             "severity": "critical",
             "id": "section-4-item-2"
           },
           {
-            "text": "All rooms shall have washing basin with running water.",
+            "text": "All rooms shall have a wash basin with running water.",
             "responseType": "standard",
             "optional": false,
             "severity": "major",
             "id": "section-4-item-3"
           },
           {
-            "text": "Reception, Recording & Waiting area",
+            "text": "Reception, recording, and waiting area: 1 room, 30 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-4-item-4"
           },
           {
-            "text": "Examination room(s) with Slit lamp",
+            "text": "Examination room(s) with slit lamp: 1 room, 12 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-4-item-5"
           },
           {
-            "text": "Procedure/minor surgery room with Scrub room",
+            "text": "Procedure / minor surgery room with scrub room: 1 room, 20 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-4-item-6"
           },
           {
-            "text": "Observation room with 2 couches for observation",
+            "text": "Observation room with 2 couches: 1 room, 16 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-4-item-7"
           },
           {
-            "text": "Keratometry and Ultrasound examination room (Optional)",
+            "text": "Keratometry and ultrasound examination room: 1 room, 20 sq. m (optional).",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-4-item-8"
           },
           {
-            "text": "Workshop for Optometry (Optional)",
+            "text": "Optometry workshop: 1 room, 20 sq. m (optional).",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-4-item-9"
           },
           {
-            "text": "Sterilization room",
+            "text": "Sterilization room: 1 room, 12 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-4-item-10"
           },
           {
-            "text": "Eyeglass dispensing corner or room (Optional)",
+            "text": "Eyeglass dispensing corner or room (optional).",
             "responseType": "standard",
             "optional": true,
             "severity": "",
             "id": "section-4-item-11"
           },
           {
-            "text": "Toilet room (staff/patient) (male & female)",
+            "text": "Staff / patient toilets (male and female): 2 toilets, 4 sq. m each.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-4-item-12"
           },
           {
-            "text": "Store room for medical supplies",
+            "text": "Medical supplies store room: 1 room, area as required.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
             "id": "section-4-item-13"
           },
           {
-            "text": "Incinerator (mobile/fixed)",
+            "text": "Incinerator (mobile or fixed): 1, 3 sq. m.",
             "responseType": "standard",
             "optional": false,
             "severity": "",
@@ -5901,44 +6623,93 @@
       },
       {
         "id": "section-5",
-        "title": "C. Professional Standards",
+        "title": "D. Staffing & Professional Qualifications",
         "items": [
           {
-            "text": "The eye clinic shall be directed by licensed ophthalmologist with two years of relevant clinical experience available at all working hours.",
+            "text": "The clinic shall be directed by a licensed ophthalmologist with at least two years of relevant clinical experience, available during all working hours.",
             "responseType": "standard",
             "optional": false,
             "severity": "critical",
             "id": "section-5-item-1"
           },
           {
-            "text": "The nurse practicing in eye clinic shall be trained and experienced on ophthalmology services.",
+            "text": "The nurse practicing in the eye clinic shall be trained and experienced in ophthalmology services.",
             "responseType": "standard",
             "optional": false,
             "severity": "major",
             "id": "section-5-item-2"
           },
           {
-            "text": "The eye clinic shall have the minimum staffing (Ophthalmologist #1, Nurse #1, Optometrist/Refractionist #1 conditional, Receptionist #1, Cleaner #1).",
+            "text": "The eye clinic shall have the required minimum staffing listed below.",
             "responseType": "standard",
-            "optional": true,
+            "optional": false,
             "severity": "critical",
             "id": "section-5-item-3"
+          },
+          {
+            "id": "section-5-new-ophthalmologist-1-required",
+            "text": "Ophthalmologist: 1 required.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-new-nurse-1-required",
+            "text": "Nurse: 1 required.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-new-optometrist-refractionist-1-if-optometry-service-is-available-conditional",
+            "text": "Optometrist / Refractionist: 1 if optometry service is available (conditional).",
+            "responseType": "standard",
+            "optional": true,
+            "severity": ""
+          },
+          {
+            "id": "section-5-new-receptionist-1-required",
+            "text": "Receptionist: 1 required.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-new-cleaner-1-required",
+            "text": "Cleaner: 1 required.",
+            "responseType": "standard",
+            "optional": false,
+            "severity": ""
           }
         ]
       },
       {
-        "id": "section-6",
-        "title": "D. Product, Equipment & Supplies Standards",
+        "id": "section-6-diagnostic",
+        "title": "E. Diagnostic Equipment & Instruments",
         "items": [
           {
-            "text": "The eye clinic shall have the required equipment, diagnostic medicines, supplies, and consumables (see detailed breakdown below).",
+            "text": "The clinic shall have the diagnostic equipment and instruments listed below.",
             "responseType": "standard",
             "optional": false,
             "severity": "major",
             "id": "section-6-item-1"
           },
           {
-            "text": "Schiotz Tonometry or Applanation tonometry (optional)",
+            "id": "section-6-diagnostic-new-ophthalmoscope",
+            "text": "Ophthalmoscope",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-6-diagnostic-new-slit-lamp",
+            "text": "Slit lamp",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "text": "Schiotz tonometry or applanation tonometry (optional)",
             "responseType": "availability",
             "optional": true,
             "severity": "",
@@ -5959,21 +6730,21 @@
             "id": "section-6-item-4"
           },
           {
-            "text": "Near point Acuity test card",
+            "text": "Near point acuity test card",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-6-item-5"
           },
           {
-            "text": "Ishihara's Color test",
+            "text": "Ishihara's color test",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-6-item-6"
           },
           {
-            "text": "Trial set with trial frame (children and adult)",
+            "text": "Trial set with trial frame (children and adults)",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -6001,7 +6772,7 @@
             "id": "section-6-item-10"
           },
           {
-            "text": "Aspheric fundus lenses volk: 78 / 90 dpt",
+            "text": "Aspheric fundus lenses Volk: 78 / 90 D",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -6015,14 +6786,14 @@
             "id": "section-6-item-12"
           },
           {
-            "text": "Three mirror Lens",
+            "text": "Three-mirror lens",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-6-item-13"
           },
           {
-            "text": "Probing set / Lacrimal dilator and probe",
+            "text": "Probing set / lacrimal dilator and probe",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -6064,14 +6835,14 @@
             "id": "section-6-item-19"
           },
           {
-            "text": "Keratometry (Optional)",
+            "text": "Keratometry (optional)",
             "responseType": "availability",
             "optional": true,
             "severity": "",
             "id": "section-6-item-20"
           },
           {
-            "text": "Visual field (Optional)",
+            "text": "Visual field equipment (optional)",
             "responseType": "availability",
             "optional": true,
             "severity": "",
@@ -6090,6 +6861,26 @@
             "optional": true,
             "severity": "",
             "id": "section-6-item-23"
+          }
+        ]
+      },
+      {
+        "id": "section-6-medicines",
+        "title": "F. Diagnostic Medicines",
+        "items": [
+          {
+            "id": "section-6-medicines-new-adrenalin-injection",
+            "text": "Adrenalin injection",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-6-medicines-new-phenylephrine",
+            "text": "Phenylephrine",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
             "text": "Tropicamide eye drops",
@@ -6113,7 +6904,7 @@
             "id": "section-6-item-26"
           },
           {
-            "text": "Fluorescein Injection (optional)",
+            "text": "Fluorescein injection (optional)",
             "responseType": "availability",
             "optional": true,
             "severity": "",
@@ -6134,14 +6925,14 @@
             "id": "section-6-item-29"
           },
           {
-            "text": "Pilocarpine inj. / drops",
+            "text": "Pilocarpine injection / drops",
             "responseType": "availability",
             "optional": false,
             "severity": "",
             "id": "section-6-item-30"
           },
           {
-            "text": "Acetazolamide / Diamox tab",
+            "text": "Acetazolamide / Diamox tablets",
             "responseType": "availability",
             "optional": false,
             "severity": "",
@@ -6160,6 +6951,26 @@
             "optional": false,
             "severity": "",
             "id": "section-6-item-33"
+          }
+        ]
+      },
+      {
+        "id": "section-6-procedure",
+        "title": "G. Minor Procedure Equipment & Instruments",
+        "items": [
+          {
+            "id": "section-6-procedure-new-lid-surgery-set",
+            "text": "Lid surgery set",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-6-procedure-new-chalazion-set",
+            "text": "Chalazion set",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
             "text": "Eye pad",
@@ -6195,6 +7006,26 @@
             "optional": true,
             "severity": "",
             "id": "section-6-item-38"
+          }
+        ]
+      },
+      {
+        "id": "section-6-consumables",
+        "title": "H. Consumables",
+        "items": [
+          {
+            "id": "section-6-consumable-new-sutures-of-different-sizes-and-types",
+            "text": "Sutures of different sizes and types",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-6-consumable-new-viscoelastic-gel",
+            "text": "Viscoelastic gel",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
             "text": "Alcohol injection 96%",
@@ -6206,6 +7037,6 @@
         ]
       }
     ],
-    "itemCount": 62
+    "itemCount": 81
   }
 ]

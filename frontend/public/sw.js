@@ -1,4 +1,4 @@
-const CACHE_NAME = 'careaudit-shell-v4';
+const CACHE_NAME = 'careaudit-shell-v6';
 const APP_SHELL = ['/', '/index.html', '/manus-routes.json', '/checklistData.json', '/manifest.webmanifest'];
 
 self.addEventListener('install', (event) => {

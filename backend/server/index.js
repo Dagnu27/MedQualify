@@ -253,7 +253,7 @@ app.get('/api/inspections/:id/pdf', authenticated, adminOnly, async (request, re
       const status = responses[item.id]?.status;
       return status === 'met' || status === 'available' ? 1 : status === 'partial' ? 0.5 : 0;
     };
-    const eligible = allItems.filter((item) => !item.optional || (responses[item.id]?.status && responses[item.id].status !== 'na'));
+    const eligible = allItems.filter((item) => item.scored !== false && (!item.optional || (responses[item.id]?.status && responses[item.id].status !== 'na')));
     const score = eligible.length ? Math.round((eligible.reduce((sum, item) => sum + scoreFor(item), 0) / eligible.length) * 100) : 0;
     const label = (status) => ({ met: 'Met', partial: 'Partially met', unmet: 'Unmet', available: 'Available', 'not-available': 'Not available', na: 'Not applicable' }[status] || 'Not assessed');
     const safeName = (record.metadata?.facilityName || 'inspection').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase() || 'inspection';
@@ -284,7 +284,7 @@ app.get('/api/inspections/:id/pdf', authenticated, adminOnly, async (request, re
     doc.moveDown(.7);
     template.sections.forEach((section, sectionIndex) => {
       const sectionItems = section.items;
-      const sectionEligible = sectionItems.filter((item) => !item.optional || (responses[item.id]?.status && responses[item.id].status !== 'na'));
+      const sectionEligible = sectionItems.filter((item) => item.scored !== false && (!item.optional || (responses[item.id]?.status && responses[item.id].status !== 'na')));
       const sectionScore = sectionEligible.length ? Math.round((sectionEligible.reduce((sum, item) => sum + scoreFor(item), 0) / sectionEligible.length) * 100) : 0;
       line(`${String(sectionIndex + 1).padStart(2, '0')} · ${section.title} — ${sectionScore}%`, 12, { bold: true, color: '#0b6b67' });
       sectionItems.forEach((item) => {

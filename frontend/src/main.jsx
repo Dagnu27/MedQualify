@@ -44,7 +44,7 @@ import './styles.css';
 
 const STORAGE_KEY = 'careaudit-inspections-v1';
 const TEMPLATE_ACCENTS = ['aqua', 'gold', 'plum', 'blue', 'coral', 'green', 'indigo'];
-const TEMPLATE_MARKS = ['CP', 'DS', '4P', 'MP', 'PT', 'PC', 'OP'];
+const TEMPLATE_MARKS = ['CP', 'DS', '4P', 'MC', 'PT', 'PC', 'OP'];
 const DEFAULT_META = {
   facilityName: '',
   facilityAddress: '',
@@ -124,7 +124,7 @@ function getStats(template, record) {
   const unanswered = items.filter((item) => !item.optional && !hasStatus(item));
   const scoredItems = items.filter((item) => {
     const status = record?.responses?.[item.id]?.status;
-    return !item.optional || (status && status !== 'na');
+    return item.scored !== false && (!item.optional || (status && status !== 'na'));
   });
   const scoreValue = (item) => {
     const status = record?.responses?.[item.id]?.status;
@@ -144,7 +144,7 @@ function getStats(template, record) {
     const sectionItems = section.items;
     const sectionAnswered = sectionItems.filter(hasStatus).length;
     const sectionUnanswered = sectionItems.filter((item) => !item.optional && !hasStatus(item)).length;
-    const eligible = sectionItems.filter((item) => !item.optional || (record?.responses?.[item.id]?.status && record.responses[item.id].status !== 'na'));
+    const eligible = sectionItems.filter((item) => item.scored !== false && (!item.optional || (record?.responses?.[item.id]?.status && record.responses[item.id].status !== 'na')));
     const sectionScore = eligible.length ? Math.round((eligible.reduce((sum, item) => sum + scoreValue(item), 0) / eligible.length) * 100) : 0;
     return { ...section, total: sectionItems.length, answered: sectionAnswered, unanswered: sectionUnanswered, score: sectionScore };
   });
@@ -799,6 +799,6 @@ createRoot(document.getElementById('root')).render(<AuthGate />);
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js?v=4').catch(() => {});
+    navigator.serviceWorker.register('/sw.js?v=6').catch(() => {});
   });
 }
