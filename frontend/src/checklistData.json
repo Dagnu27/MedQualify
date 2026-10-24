@@ -3221,193 +3221,193 @@
         "title": "2. General Service Requirements",
         "items": [
           {
+            "id": "section-2-item-1",
             "text": "The medium clinic shall be directed by a General Practitioner / Public Health Officer / BSc Nurse / BSc Midwife.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-1"
+            "severity": ""
           },
           {
+            "id": "section-2-item-2",
             "text": "The clinic shall provide service only at outpatient/ambulatory level at least during working hours.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-2"
+            "severity": ""
           },
           {
+            "id": "section-2-item-3",
             "text": "Emergency care with qualified staff shall be available during government working hours.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-3"
+            "severity": ""
           },
           {
+            "id": "section-2-item-4",
             "text": "The medium clinic shall avail updated reference materials, treatment guidelines, and manuals for common diseases.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-4"
+            "severity": ""
           },
           {
+            "id": "section-2-item-5",
             "text": "Diseases under national surveillance shall be notified to the FMOH through the proper reporting channel.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-5"
+            "severity": ""
           },
           {
-            "text": "The medium clinic shall have at a minimum the required health personnel and support staff (see detailed table below).",
+            "id": "section-2-item-6",
+            "text": "The medium clinic shall have at a minimum the required health personnel and support staff (see staffing requirements below).",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-6"
+            "severity": ""
           },
           {
+            "id": "section-2-item-7",
             "text": "The medium clinic shall conduct workload analysis.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-7"
+            "severity": ""
           },
           {
+            "id": "section-2-item-8",
             "text": "The medium clinic shall assign a quality focal person to improve quality of service deliveries.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-8"
+            "severity": ""
           },
           {
+            "id": "section-2-item-9",
             "text": "The medium clinic shall provide or facilitate training to their staff.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-9"
+            "severity": ""
           },
           {
-            "text": "The medium clinic shall display in a visible place: / a) List of available services (during & after working hours) / b) List of working professionals (during & after working hours) / c) Updated list of various fees and prices",
+            "id": "section-2-item-10",
+            "text": "The medium clinic shall display in a visible place: list of available services (during and after working hours); list of working professionals (during and after working hours); and an updated list of fees and prices.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-10"
+            "severity": ""
           },
           {
+            "id": "section-2-item-11",
             "text": "The medium clinic facilities shall be well marked and easily accessible for persons with disability.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-11"
+            "severity": ""
           },
           {
-            "text": "Potential sources of accidents shall be identified and acted upon (slippery floors, doorways, footsteps).",
+            "id": "section-2-item-12",
+            "text": "Potential sources of accidents shall be identified and acted upon, including slippery floors, doorways, and footsteps.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-12"
+            "severity": ""
           },
           {
-            "text": "All patient care rooms shall be provided functional hand washing basin.",
+            "id": "section-2-item-13",
+            "text": "All patient care rooms shall be provided with a functional hand-washing basin.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-13"
+            "severity": ""
           },
           {
-            "text": "Internal surfaces (floors, walls, ceilings) shall be: / a) Smooth, impervious, free from cracks / b) Easy to clean and decontaminate / c) Non-combustible / fire-resistant",
+            "id": "section-2-item-14",
+            "text": "Internal surfaces (floors, walls, and ceilings) shall be smooth, impervious, free from cracks, easy to clean and decontaminate, and made of non-combustible materials or materials with high fire resistance and low flame-spread characteristics.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-14"
+            "severity": ""
           },
           {
-            "text": "Circulation ways and sub-corridors shall be a minimum 2m wide.",
+            "id": "section-2-item-15",
+            "text": "Circulation ways and sub-corridors shall be a minimum of 2 m wide.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-15"
+            "severity": ""
           },
           {
-            "text": "Patient serving corridors shall not be less than 2m wide.",
+            "id": "section-2-item-16",
+            "text": "Patient-serving corridors shall not be less than 2 m wide.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-16"
+            "severity": ""
           },
           {
+            "id": "section-2-item-17",
             "text": "Glass doors shall be marked to avoid accidental collision.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-17"
+            "severity": ""
           },
           {
-            "text": "Multi-floor facilities shall have horizontal/vertical access mechanism (stairs & ramp or stairs & elevator).",
+            "id": "section-2-item-18",
+            "text": "Multi-floor facilities shall provide access to all functional rooms by stairs and ramp or stairs and elevator.",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-18"
+            "severity": ""
           },
           {
-            "text": "General Practitioner or Health Officer",
+            "id": "section-2-item-19",
+            "text": "General Practitioner or Health Officer ? 1 required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-19"
+            "severity": ""
           },
           {
-            "text": "Nurse",
+            "id": "section-2-item-20",
+            "text": "Nurse ? 1 required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-20"
+            "severity": ""
           },
           {
-            "text": "Midwife",
+            "id": "section-2-item-21",
+            "text": "Midwife ? 1 required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-21"
+            "severity": ""
           },
           {
-            "text": "BSc Midwife (if delivery service available)",
+            "id": "section-2-item-22",
+            "text": "BSc Midwife ? 1 required if delivery service is available",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-2-item-22"
+            "severity": ""
           },
           {
-            "text": "Laboratory Technician or Laboratory Technologist",
+            "id": "section-2-item-23",
+            "text": "Laboratory Technician or Laboratory Technologist ? 1 required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-23"
+            "severity": ""
           },
           {
-            "text": "Radiology Technologist (if ultrasound service available)",
+            "id": "section-2-item-24",
+            "text": "Radiology Technologist ? 1 required if ultrasound service is available",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-2-item-24"
+            "severity": ""
           },
           {
-            "text": "Radiology Technologist / Radiographer (optional)",
+            "id": "section-2-item-25",
+            "text": "Radiology Technologist / Radiographer ? 1 optional",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-2-item-25"
+            "severity": ""
           },
           {
-            "text": "Receptionist",
+            "id": "section-2-item-26",
+            "text": "Receptionist ? 1 required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-26"
+            "severity": ""
           },
           {
-            "text": "Cleaner",
+            "id": "section-2-item-27",
+            "text": "Cleaner ? 1 required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-2-item-27"
+            "severity": ""
           }
         ]
       },
@@ -3416,672 +3416,938 @@
         "title": "3. Premises Setup Requirements",
         "items": [
           {
-            "text": "Reception, Registration / Recording & Waiting area",
+            "id": "section-3-item-1",
+            "text": "Reception, Registration / Recording & Waiting area ? 1 room; 16 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-1"
+            "severity": ""
           },
           {
-            "text": "Examination room",
+            "id": "section-3-item-2",
+            "text": "Examination room ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-2"
+            "severity": ""
           },
           {
-            "text": "Emergency observation / resuscitation room (2 beds)",
+            "id": "section-3-item-3",
+            "text": "Emergency observation / resuscitation room with two beds ? 1 room; 16 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-3"
+            "severity": ""
           },
           {
-            "text": "Instrument processing room",
+            "id": "section-3-item-4",
+            "text": "Instrument processing room ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-4"
+            "severity": ""
           },
           {
-            "text": "Staff room",
+            "id": "section-3-item-5",
+            "text": "Staff room ? 1 room; 9 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-5"
+            "severity": ""
           },
           {
-            "text": "MCH room with or without obstetric ultrasound",
+            "id": "section-3-item-6",
+            "text": "MCH room with or without obstetric ultrasound ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-6"
+            "severity": ""
           },
           {
-            "text": "Immunization room (optional)",
+            "id": "section-3-item-7",
+            "text": "Immunization room (optional) ? 1 room; 9 sq. m",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-3-item-7"
+            "severity": ""
           },
           {
-            "text": "Laboring room (optional)",
+            "id": "section-3-item-8",
+            "text": "Laboring room (optional) ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-3-item-8"
+            "severity": ""
           },
           {
-            "text": "Delivery room (optional) with 1 delivery couch",
+            "id": "section-3-item-9",
+            "text": "Delivery room (optional) with 1 delivery couch ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-3-item-9"
+            "severity": ""
           },
           {
-            "text": "Post natal rooms (optional)",
+            "id": "section-3-item-10",
+            "text": "Post natal room (optional) ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-3-item-10"
+            "severity": ""
           },
           {
-            "text": "Shower room and toilet (if delivery service available)",
+            "id": "section-3-item-11",
+            "text": "Shower room and toilet (if delivery service is available) ? 1; area as required",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-3-item-11"
+            "severity": ""
           },
           {
-            "text": "Duty room (if emergency service is 24 hours)",
+            "id": "section-3-item-12",
+            "text": "Duty room (if emergency service is 24 hours) ? 1; area as required",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-3-item-12"
+            "severity": ""
           },
           {
-            "text": "Treatment / procedure / injection room",
+            "id": "section-3-item-13",
+            "text": "Treatment / procedure / injection room ? 1 room; 9 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-13"
+            "severity": ""
           },
           {
-            "text": "Minor procedure room",
+            "id": "section-3-item-14",
+            "text": "Minor procedure room ? 1 room; 12 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-14"
+            "severity": ""
           },
           {
-            "text": "Laboratory room",
+            "id": "section-3-item-15",
+            "text": "Laboratory room ? 1 room; 22 sq. m",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-15"
+            "severity": ""
           },
           {
-            "text": "Sample collection room",
+            "id": "section-3-item-16",
+            "text": "Sample collection room ? 1 room; 4 sq. m (included in 22 sq. m)",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-16"
+            "severity": ""
           },
           {
-            "text": "X-ray room as per ERPA (optional)",
+            "id": "section-3-item-17",
+            "text": "X-ray room as per ERPA (optional) ? As required by ERPA",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-3-item-17"
+            "severity": ""
           },
           {
-            "text": "Conventional X-ray room",
+            "id": "section-3-item-18",
+            "text": "Conventional X-ray room ? 1; as required by ERPA",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-18"
+            "severity": ""
           },
           {
-            "text": "Dark room (if necessary)",
+            "id": "section-3-item-19",
+            "text": "Dark room (if necessary) ? 1; as required",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-3-item-19"
+            "severity": ""
           },
           {
-            "text": "Toilet with hand washing basin",
+            "id": "section-3-item-20",
+            "text": "Toilet with hand-washing basin ? 2; as required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-20"
+            "severity": ""
           },
           {
-            "text": "Patient dressing cubicle inside X-ray room",
+            "id": "section-3-item-21",
+            "text": "Patient dressing cubicle inside X-ray room ? 1; as required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-21"
+            "severity": ""
           },
           {
-            "text": "Sub waiting area",
+            "id": "section-3-item-22",
+            "text": "Sub-waiting area ? 1; as required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-22"
+            "severity": ""
           },
           {
-            "text": "Toilet (Male & Female)",
+            "id": "section-3-item-23",
+            "text": "Toilet (Male & Female) ? 2; as required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-23"
+            "severity": ""
           },
           {
-            "text": "Staff toilet with shower",
+            "id": "section-3-item-24",
+            "text": "Staff toilet with shower ? 1; as required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-24"
+            "severity": ""
           },
           {
-            "text": "Incinerator (can be outsourced)",
+            "id": "section-3-item-25",
+            "text": "Incinerator (if not within the clinic compound, a contractual agreement with an authorized waste managing institution is required) ? As required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-25"
+            "severity": ""
           },
           {
-            "text": "Area for burial pit",
+            "id": "section-3-item-26",
+            "text": "Area for burial pit ? As required",
             "responseType": "standard",
             "optional": false,
-            "severity": "",
-            "id": "section-3-item-26"
+            "severity": ""
           },
           {
-            "text": "Area for placenta pit (if delivery service available)",
+            "id": "section-3-item-27",
+            "text": "Area for placenta pit (if delivery service is available) ? As required",
             "responseType": "standard",
             "optional": true,
-            "severity": "",
-            "id": "section-3-item-27"
+            "severity": ""
           }
         ]
       },
       {
         "id": "section-4",
-        "title": "4. Equipment, Instruments & Supplies Checklist",
+        "title": "4. Equipment, Instruments & Supplies Checklist - a) Diagnostic Equipment",
         "items": [
           {
+            "id": "section-4-extra-stethoscope",
+            "text": "Stethoscope",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-extra-sphygmomanometer",
+            "text": "Sphygmomanometer",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-1",
             "text": "Thermometer",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-1"
+            "severity": ""
           },
           {
+            "id": "section-4-item-2",
             "text": "Weighing scale",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-2"
+            "severity": ""
           },
           {
-            "text": "Infantometer & height scale",
+            "id": "section-4-item-3",
+            "text": "Infantometer and height scale",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-3"
+            "severity": ""
           },
           {
+            "id": "section-4-item-4",
             "text": "Otoscope",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-4"
+            "severity": ""
           },
           {
+            "id": "section-4-item-5",
             "text": "Ophthalmoscope",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-5"
+            "severity": ""
           },
           {
+            "id": "section-4-item-6",
             "text": "Reflex hammer",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-6"
+            "severity": ""
           },
           {
+            "id": "section-4-item-7",
             "text": "Fetostethoscope",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-7"
+            "severity": ""
           },
           {
+            "id": "section-4-item-8",
             "text": "Snellen's Chart",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-8"
+            "severity": ""
           },
           {
+            "id": "section-4-item-9",
             "text": "Tuning fork (500 Hz)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-9"
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-4b",
+        "title": "4. Equipment, Instruments & Supplies Checklist - b) Others",
+        "items": [
+          {
+            "id": "section-4-extra-tourniquet",
+            "text": "Tourniquet",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
+            "id": "section-4-extra-drapes",
+            "text": "Drapes",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-extra-surgical-cape",
+            "text": "Surgical cape",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-extra-surgical-mask",
+            "text": "Surgical mask",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-10",
             "text": "Kick buckets",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-10"
+            "severity": ""
           },
           {
+            "id": "section-4-item-11",
             "text": "Tongue depressors",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-11"
+            "severity": ""
           },
           {
+            "id": "section-4-item-12",
             "text": "Cabinets and shelves",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-12"
+            "severity": ""
           },
           {
-            "text": "Wall clock / Time clock",
+            "id": "section-4-item-13",
+            "text": "Time clock",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-13"
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-4c",
+        "title": "4. Equipment, Instruments & Supplies Checklist - c) Instruments",
+        "items": [
+          {
+            "id": "section-4-extra-dressing-set",
+            "text": "Dressing set",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
+            "id": "section-4-extra-minor-surgical-set",
+            "text": "Minor surgical set",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-14",
             "text": "Delivery set",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-14"
+            "severity": ""
           },
           {
+            "id": "section-4-item-15",
             "text": "Enema set",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-15"
+            "severity": ""
           },
           {
-            "text": "Vaginal Specula (different sizes)",
+            "id": "section-4-item-16",
+            "text": "Specula of different sizes",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-16"
+            "severity": ""
           },
           {
+            "id": "section-4-item-17",
             "text": "Pickup forceps with jar",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-17"
+            "severity": ""
           },
           {
+            "id": "section-4-item-18",
             "text": "Sterilization drums",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-18"
+            "severity": ""
           },
           {
+            "id": "section-4-item-19",
             "text": "Kidney dishes",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-19"
+            "severity": ""
           },
           {
-            "text": "Instrument tray & trolley",
+            "id": "section-4-item-20",
+            "text": "Instrument tray",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-20"
+            "severity": ""
           },
           {
+            "id": "section-4-item-21",
             "text": "Ear irrigation syringe",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-21"
+            "severity": ""
           },
           {
+            "id": "section-4-item-22",
             "text": "Packing nasal forceps",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-22"
+            "severity": ""
           },
           {
+            "id": "section-4-item-23",
             "text": "Steri-strip for steam autoclave",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-23"
+            "severity": ""
           },
           {
+            "id": "section-4-item-24",
             "text": "Lumbar puncture set (optional)",
             "responseType": "availability",
-            "optional": true,
-            "severity": "",
-            "id": "section-4-item-24"
+            "optional": false,
+            "severity": ""
           },
           {
-            "text": "IV Infusion stand",
+            "id": "section-4-item-25",
+            "text": "IV infusion stand",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-25"
+            "severity": ""
           },
           {
+            "id": "section-4-extra-instrument-trolley",
+            "text": "Instrument trolley",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-4d",
+        "title": "4. Equipment, Instruments & Supplies Checklist - d) Medical Equipment",
+        "items": [
+          {
+            "id": "section-4-extra-mobile-examination-lamp",
+            "text": "Mobile examination lamp",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-extra-examination-couches",
+            "text": "Examination couches",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-4-item-26",
             "text": "Sterilizer (steam and/or dry)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-26"
+            "severity": ""
           },
           {
+            "id": "section-4-item-27",
             "text": "Refrigerator #2 (LAB & Treatment room)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-27"
+            "severity": ""
           },
           {
+            "id": "section-4-item-28",
             "text": "Oxygen equipment with all accessories",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-28"
+            "severity": ""
           },
           {
-            "text": "Binocular Microscope #1",
+            "id": "section-4-item-29",
+            "text": "Binocular microscope #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-29"
+            "severity": ""
           },
           {
+            "id": "section-4-item-30",
             "text": "Chamber #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-30"
+            "severity": ""
           },
           {
+            "id": "section-4-item-31",
             "text": "Differential counter #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-31"
+            "severity": ""
           },
           {
+            "id": "section-4-item-32",
             "text": "Tally counter #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-32"
+            "severity": ""
           },
           {
+            "id": "section-4-item-33",
             "text": "Centrifuge #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-33"
+            "severity": ""
           },
           {
+            "id": "section-4-item-34",
             "text": "Timer #2",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-34"
+            "severity": ""
           },
           {
+            "id": "section-4-item-35",
             "text": "Refrigerator with thermometer #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-35"
+            "severity": ""
           },
           {
+            "id": "section-4-item-36",
             "text": "Test tube rack #5",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-36"
+            "severity": ""
           },
           {
+            "id": "section-4-item-37",
             "text": "ESR rack of five #2",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-37"
+            "severity": ""
           },
           {
+            "id": "section-4-item-38",
             "text": "ESR tubes #12",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-38"
+            "severity": ""
           },
           {
+            "id": "section-4-item-39",
             "text": "Spirit lamp #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-39"
+            "severity": ""
           },
           {
-            "text": "Slides & Cover Slides",
+            "id": "section-4-item-40",
+            "text": "Cover slides",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-40"
+            "severity": ""
           },
           {
+            "id": "section-4-item-41",
             "text": "Reagents",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-41"
+            "severity": ""
           },
           {
-            "text": "Dry oven / Autoclave",
+            "id": "section-4-item-42",
+            "text": "Dry oven / autoclave (can be shared with general clinic service)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-42"
+            "severity": ""
           },
           {
+            "id": "section-4-item-43",
             "text": "Spectrophotometer (semi-automated)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-43"
+            "severity": ""
           },
           {
+            "id": "section-4-item-44",
             "text": "Shaker #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-44"
+            "severity": ""
           },
           {
+            "id": "section-4-item-45",
             "text": "Roller #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-45"
+            "severity": ""
           },
           {
+            "id": "section-4-item-46",
             "text": "Water bath #1",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-4-item-46"
+            "severity": ""
+          },
+          {
+            "id": "section-4-extra-slides",
+            "text": "Slides",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           }
         ]
       },
       {
         "id": "section-5",
-        "title": "5. Infection Prevention & Control (IPC) Requirements",
+        "title": "5. Infection Prevention & Control (IPC) Requirements - a) Waste Management Equipment & Supplies",
         "items": [
           {
+            "id": "section-5-extra-safety-boxes",
+            "text": "Safety boxes",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-garbage-bins",
+            "text": "Garbage bins",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-item-1",
             "text": "Wheelbarrows",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-1"
+            "severity": ""
           },
           {
+            "id": "section-5-item-2",
             "text": "Large garbage bins",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-2"
+            "severity": ""
           },
           {
+            "id": "section-5-item-3",
             "text": "Plastic garbage bags",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-3"
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-5b",
+        "title": "5. Infection Prevention & Control (IPC) Requirements - b) Instrument Processing",
+        "items": [
+          {
+            "id": "section-5-extra-autoclaves-and-steam-sterilizers",
+            "text": "Autoclaves and steam sterilizers",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
+            "id": "section-5-extra-indicator-test-strips",
+            "text": "Indicator test strips",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-item-4",
             "text": "Boiler",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-4"
+            "severity": ""
           },
           {
+            "id": "section-5-item-5",
             "text": "Oven",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-5"
+            "severity": ""
           },
           {
+            "id": "section-5-item-6",
             "text": "Storage shelves for medical equipment",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-6"
+            "severity": ""
           },
           {
-            "text": "Chemicals & disinfectants (0.5% chlorine solution)",
+            "id": "section-5-item-7",
+            "text": "Chemicals and disinfectants: 0.5% chlorine solution (diluted bleach)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-7"
+            "severity": ""
           },
           {
-            "text": "Brushes (for small items)",
+            "id": "section-5-item-8",
+            "text": "Brushes (toothbrush for small items)",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-8"
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-5c",
+        "title": "5. Infection Prevention & Control (IPC) Requirements - c) Hand Hygiene",
+        "items": [
+          {
+            "id": "section-5-extra-sinks-ward-and-other-areas",
+            "text": "Sinks (ward and other areas)",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
+            "id": "section-5-extra-water-container-with-faucet",
+            "text": "Water container with faucet",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-item-9",
             "text": "Soap dispenser",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-9"
+            "severity": ""
           },
           {
+            "id": "section-5-item-10",
             "text": "Alcohol-based hand rub",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-10"
+            "severity": ""
           },
           {
+            "id": "section-5-item-11",
             "text": "Personal towels",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-11"
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-5d",
+        "title": "5. Infection Prevention & Control (IPC) Requirements - d) Cleaning",
+        "items": [
+          {
+            "id": "section-5-extra-mop",
+            "text": "Mop",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           },
           {
+            "id": "section-5-extra-bucket",
+            "text": "Bucket",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-broom",
+            "text": "Broom",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-dust-mop",
+            "text": "Dust mop",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-item-12",
             "text": "Cleaning cloth",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-12"
+            "severity": ""
           },
           {
-            "text": "Detergent & Bleach",
+            "id": "section-5-item-13",
+            "text": "Detergent",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-13"
+            "severity": ""
           },
           {
-            "text": "Latex or Nitrile gloves",
+            "id": "section-5-extra-bleach",
+            "text": "Bleach",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-14"
-          },
+            "severity": ""
+          }
+        ]
+      },
+      {
+        "id": "section-5e",
+        "title": "5. Infection Prevention & Control (IPC) Requirements - e) Personal Protective Equipment (PPE)",
+        "items": [
           {
-            "text": "Eye shield & Goggles",
+            "id": "section-5-extra-heavy-duty-gloves",
+            "text": "Heavy-duty gloves",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-15"
+            "severity": ""
           },
           {
-            "text": "Visors & Face shields",
+            "id": "section-5-extra-surgical-gloves",
+            "text": "Surgical gloves",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-16"
+            "severity": ""
           },
           {
-            "text": "Dust mask & Respirator",
+            "id": "section-5-item-14",
+            "text": "Latex or nitrile gloves",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-17"
+            "severity": ""
           },
           {
+            "id": "section-5-item-15",
+            "text": "Eye shield",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-item-16",
+            "text": "Visors",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-item-17",
+            "text": "Dust mask",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-item-18",
             "text": "Plastic apron",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-18"
+            "severity": ""
           },
           {
-            "text": "Boots / Protective shoes",
+            "id": "section-5-item-19",
+            "text": "Boots",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-19"
+            "severity": ""
           },
           {
+            "id": "section-5-item-20",
             "text": "Caps",
             "responseType": "availability",
             "optional": false,
-            "severity": "",
-            "id": "section-5-item-20"
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-goggles",
+            "text": "Goggles",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-respirator",
+            "text": "Respirator",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-other-types-of-face-mask",
+            "text": "Other types of face mask",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-other-personal-protective-equipment",
+            "text": "Other personal protective equipment",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-other-protective-shoes",
+            "text": "Other protective shoes",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-face-shield",
+            "text": "Face shield",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
+          },
+          {
+            "id": "section-5-extra-mask",
+            "text": "Mask",
+            "responseType": "availability",
+            "optional": false,
+            "severity": ""
           }
         ]
       }
     ],
-    "itemCount": 120
+    "itemCount": 152
   },
   {
     "id": "physio",
