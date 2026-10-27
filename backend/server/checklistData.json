@@ -464,7 +464,7 @@
           },
           {
             "id": "section-10-item-2",
-            "text": "Separate locked room or cabinet (key kept with head pharmacist, permanently affixed)",
+            "text": "Separate locked room or cabinet (key kept with head pharmacist, permanently affixed)",    
             "responseType": "standard",
             "optional": false,
             "severity": "critical"
