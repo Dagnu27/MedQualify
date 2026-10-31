@@ -6,6 +6,20 @@ import { fileURLToPath } from 'node:url';
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import PDFDocument from 'pdfkit';
+import ExcelJS from 'exceljs';
+import {
+  BorderStyle,
+  Document,
+  HeadingLevel,
+  Packer,
+  Paragraph,
+  ShadingType,
+  Table,
+  TableCell,
+  TableRow,
+  TextRun,
+  WidthType,
+} from 'docx';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -87,6 +101,38 @@ function clearSessionCookie(response) {
 
 function publicUser(row) {
   return { id: row.id, role: row.role, name: row.name, username: row.username, active: Boolean(row.active), createdAt: row.created_at };
+}
+
+function reportData(record, template) {
+  const responses = record.responses || {};
+  const scoreFor = (item) => {
+    const status = responses[item.id]?.status;
+    return status === 'met' || status === 'available' ? 1 : status === 'partial' ? 0.5 : 0;
+  };
+  const sectionScores = template.sections.map((section) => {
+    const scored = section.items.filter((item) => item.scored !== false
+      && (!item.optional || (responses[item.id]?.status && responses[item.id].status !== 'na')));
+    const score = scored.length ? Math.round((scored.reduce((sum, item) => sum + scoreFor(item), 0) / scored.length) * 100) : 0;
+    return { ...section, score, items: section.items.map((item) => ({ ...item, response: responses[item.id] || {} })) };
+  });
+  const allItems = sectionScores.flatMap((section) => section.items.map((item) => ({ ...item, sectionTitle: section.title })));
+  const eligible = allItems.filter((item) => item.scored !== false
+    && (!item.optional || (item.response.status && item.response.status !== 'na')));
+  const gaps = allItems.filter((item) => item.response.status === 'unmet'
+    || item.response.status === 'not-available'
+    || (!item.optional && !item.response.status));
+  const unanswered = allItems.filter((item) => !item.optional && !item.response.status);
+  const score = eligible.length ? Math.round((eligible.reduce((sum, item) => sum + scoreFor(item), 0) / eligible.length) * 100) : 0;
+  const labels = { met: 'Met', partial: 'Partially met', unmet: 'Unmet', available: 'Available', 'not-available': 'Not available', na: 'Not applicable' };
+  return {
+    sections: sectionScores,
+    gaps,
+    score,
+    critical: gaps.filter((item) => item.severity === 'critical').length,
+    major: gaps.filter((item) => item.severity === 'major').length,
+    unanswered: unanswered.length,
+    statusLabel: (status) => labels[status] || 'Not assessed',
+  };
 }
 
 function validateCredentials({ name, username, password }, requireName = false) {
@@ -285,81 +331,509 @@ app.get('/api/inspections/:id/pdf', authenticated, adminOnly, async (request, re
     const record = parsePayload(row.payload);
     const template = checklistTemplates.find((item) => item.id === record.templateId);
     if (!template) return response.status(422).json({ error: 'The source checklist for this inspection is unavailable.' });
-    const responses = record.responses || {};
-    const allItems = template.sections.flatMap((section) => section.items);
-    const scoreFor = (item) => {
-      const status = responses[item.id]?.status;
-      return status === 'met' || status === 'available' ? 1 : status === 'partial' ? 0.5 : 0;
-    };
-    const eligible = allItems.filter((item) => item.scored !== false && (!item.optional || (responses[item.id]?.status && responses[item.id].status !== 'na')));
-    const score = eligible.length ? Math.round((eligible.reduce((sum, item) => sum + scoreFor(item), 0) / eligible.length) * 100) : 0;
-    const label = (status) => ({ met: 'Met', partial: 'Partially met', unmet: 'Unmet', available: 'Available', 'not-available': 'Not available', na: 'Not applicable' }[status] || 'Not assessed');
+    const stats = reportData(record, template);
+    const metadata = record.metadata || {};
     const safeName = (record.metadata?.facilityName || 'inspection').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase() || 'inspection';
     response.setHeader('Content-Type', 'application/pdf');
     response.setHeader('Content-Disposition', `attachment; filename="careaudit-${safeName}.pdf"`);
-    const doc = new PDFDocument({ size: 'A4', margin: 48, bufferPages: true });
+    const doc = new PDFDocument({ size: 'A4', margin: 42, bufferPages: true });
     doc.pipe(response);
-    const line = (text, size = 9, options = {}) => {
-      if (doc.y > 750) doc.addPage();
-      doc.font(options.bold ? 'Helvetica-Bold' : 'Helvetica').fontSize(size).fillColor(options.color || '#173533').text(String(text || '—'), { width: 500, lineGap: 2 });
+    const colors = {
+      ink: '#173533',
+      teal: '#0b6b67',
+      muted: '#71817d',
+      line: '#dce5e0',
+      mint: '#edf7f0',
+      green: '#43845b',
+      gold: '#aa822b',
+      red: '#b2604e',
     };
-    line('CareAudit', 22, { bold: true, color: '#0b6b67' });
-    line('FINAL INSPECTION REPORT', 9, { bold: true, color: '#5f7270' });
-    doc.moveDown(.8);
-    line(record.metadata?.facilityName || 'Untitled facility', 20, { bold: true });
-    line(`${template.title} · ${record.metadata?.inspectionType || 'Inspection'} visit`, 10, { color: '#5f7270' });
-    line(`Completed ${record.completedAt || record.updatedAt || new Date().toISOString()}`, 9, { color: '#5f7270' });
-    doc.moveDown(.6);
-    line(`OVERALL COMPLIANCE: ${score}%`, 14, { bold: true, color: score >= 85 ? '#34734f' : score >= 70 ? '#927427' : '#a85949' });
-    line(`Facility address: ${record.metadata?.facilityAddress || '—'}`);
-    line(`Location: ${[record.metadata?.region, record.metadata?.zone, record.metadata?.woreda, record.metadata?.town, record.metadata?.kebele, record.metadata?.houseNo].filter(Boolean).join(' · ') || '—'}`);
-    line(`Licensed professional: ${[record.metadata?.professionalName, record.metadata?.profession].filter(Boolean).join(' · ') || '—'}`);
-    line(`Facility head: ${record.metadata?.headName || '—'}   Owner / operator: ${record.metadata?.ownerName || '—'}`);
-    line(`Facility license: ${record.metadata?.licenseNo || '—'}   Date: ${record.metadata?.licenseDate || '—'}`);
-    line(`Valid trade license: ${record.metadata?.tradeLicenseStatus || 'Not recorded'}`);
-    line(`Phone: ${record.metadata?.contact || '—'}   P.O. Box: ${record.metadata?.poBox || '—'}`);
-    line(`Lead assessor: ${record.metadata?.assessor || '—'}`);
-    doc.moveDown(.7);
-    template.sections.forEach((section, sectionIndex) => {
-      const sectionItems = section.items;
-      const sectionEligible = sectionItems.filter((item) => item.scored !== false && (!item.optional || (responses[item.id]?.status && responses[item.id].status !== 'na')));
-      const sectionScore = sectionEligible.length ? Math.round((sectionEligible.reduce((sum, item) => sum + scoreFor(item), 0) / sectionEligible.length) * 100) : 0;
-      line(`${String(sectionIndex + 1).padStart(2, '0')} · ${section.title} — ${sectionScore}%`, 12, { bold: true, color: '#0b6b67' });
-      sectionItems.forEach((item) => {
-        const responseData = responses[item.id] || {};
-        line(`${label(responseData.status)}${item.severity ? ` · ${item.severity}` : ''} — ${item.text}`, 8.5, { color: responseData.status === 'unmet' || responseData.status === 'not-available' ? '#a85949' : '#173533' });
-        if (responseData.remark) line(`Remark: ${responseData.remark}`, 8, { color: '#5f7270' });
-      });
-      doc.moveDown(.5);
+    const pageBottom = () => doc.page.height - doc.page.margins.bottom - 24;
+    const ensureSpace = (height) => {
+      if (doc.y + height > pageBottom()) doc.addPage();
+    };
+    const write = (text, options = {}) => {
+      doc.font(options.bold ? 'Helvetica-Bold' : 'Helvetica')
+        .fontSize(options.size || 9)
+        .fillColor(options.color || colors.ink)
+        .text(String(text || '—'), options.x === undefined ? doc.page.margins.left : options.x, options.y === undefined ? doc.y : options.y, {
+          width: options.width || doc.page.width - doc.page.margins.left - doc.page.margins.right,
+          lineGap: options.lineGap === undefined ? 2 : options.lineGap,
+          align: options.align || 'left',
+        });
+    };
+    const drawRule = (y, color = colors.line) => {
+      doc.moveTo(doc.page.margins.left, y).lineTo(doc.page.width - doc.page.margins.right, y).lineWidth(0.7).strokeColor(color).stroke();
+    };
+    const sectionHeading = (number, title) => {
+      ensureSpace(34);
+      const y = doc.y;
+      write(number, { x: 42, y, width: 20, size: 8, color: colors.teal, bold: true });
+      write(title, { x: 61, y: y - 2, width: 470, size: 15, bold: true });
+      doc.y = y + 24;
+      drawRule(doc.y);
+      doc.y += 12;
+    };
+    const dateText = (value) => {
+      if (!value) return '—';
+      const date = new Date(value);
+      return Number.isNaN(date.getTime()) ? String(value) : new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+    };
+    const facilityName = metadata.facilityName || 'Untitled facility';
+    const address = metadata.facilityAddress
+      || [metadata.region, metadata.zone, metadata.woreda, metadata.town, metadata.kebele].filter(Boolean).join(' | ')
+      || 'Address not supplied';
+    const tone = stats.score >= 85 ? colors.green : stats.score >= 70 ? colors.gold : colors.red;
+
+    write('CareAudit', { x: 42, y: 33, width: 180, size: 18, bold: true, color: colors.teal });
+    write('FACILITY COMPLIANCE', { x: 43, y: 54, width: 190, size: 6, color: colors.muted });
+    write('FINAL INSPECTION REPORT', { x: 365, y: 42, width: 188, size: 8, color: colors.teal, align: 'right' });
+    drawRule(72);
+
+    doc.y = 95;
+    write(String(template.title).toUpperCase(), { size: 8, color: colors.teal });
+    doc.moveDown(0.45);
+    const headingY = doc.y;
+    write(facilityName, { y: headingY, width: 400, size: 24, bold: true });
+    write(`${address} | ${metadata.inspectionType || 'Inspection'} visit | completed ${dateText(record.completedAt || record.updatedAt)}`, {
+      y: doc.y + 2,
+      width: 420,
+      size: 8,
+      color: colors.muted,
     });
-    line('Visit notes', 12, { bold: true, color: '#0b6b67' });
-    line(record.metadata?.notes || 'No additional visit note was recorded.');
-    doc.moveDown(1);
-    line(`Process owner: ${record.metadata?.processOwner || '—'}`);
-    line(`Lead assessor: ${record.metadata?.assessor || '—'}`);
-    line('Inspection team sign-off', 12, { bold: true, color: '#0b6b67' });
+    write(`${stats.score}%`, { x: 454, y: headingY - 5, width: 98, size: 28, bold: true, color: tone, align: 'right' });
+    write('OVERALL COMPLIANCE', { x: 444, y: headingY + 27, width: 108, size: 6, color: colors.muted, align: 'right' });
+    doc.y = Math.max(doc.y, headingY + 43) + 10;
+    drawRule(doc.y);
+    doc.y += 14;
+
+    const metadataFields = [
+      ['Licensed professional', [metadata.professionalName, metadata.profession].filter(Boolean).join(' | ')],
+      ['Facility head', metadata.headName],
+      ['Owner / operator', metadata.ownerName],
+      ['Facility license no. / date', [metadata.licenseNo, metadata.licenseDate].filter(Boolean).join(' | ')],
+      ['Valid trade license', metadata.tradeLicenseStatus],
+      ['Lead assessor', metadata.assessor],
+      ['Phone / P.O. Box', [metadata.contact, metadata.poBox].filter(Boolean).join(' | ')],
+      ['Annual patient load', metadata.annualLoad],
+      ['House number', metadata.houseNo],
+    ];
+    const columnWidth = (doc.page.width - doc.page.margins.left - doc.page.margins.right) / 3;
+    const metadataY = doc.y;
+    metadataFields.forEach(([label, value], index) => {
+      const column = index % 3;
+      const x = doc.page.margins.left + column * columnWidth;
+      const y = metadataY + Math.floor(index / 3) * 39;
+      write(String(label).toUpperCase(), { x, y, width: columnWidth - 14, size: 6, color: colors.muted });
+      write(value, { x, y: y + 11, width: columnWidth - 14, size: 8, bold: true });
+    });
+    doc.y = metadataY + 3 * 39 + 6;
+    drawRule(doc.y);
+    doc.y += 14;
+
+    const calloutY = doc.y;
+    doc.roundedRect(42, calloutY, doc.page.width - 84, 42, 6).fill(colors.mint);
+    doc.circle(58, calloutY + 21, 7).fill(colors.green);
+    const complianceMessage = stats.score >= 85
+      ? 'Strong footing with targeted follow-up.'
+      : stats.score >= 70
+        ? 'Compliant in many areas, with follow-up required.'
+        : 'Material gaps require a documented action plan.';
+    write(complianceMessage, { x: 74, y: calloutY + 9, width: 455, size: 9, bold: true });
+    write(`${stats.critical} critical markers | ${stats.major} major markers | ${stats.unanswered} unanswered requirements`, {
+      x: 74,
+      y: calloutY + 23,
+      width: 455,
+      size: 7,
+      color: colors.muted,
+    });
+    doc.y = calloutY + 56;
+
+    sectionHeading('01', 'Section scores');
+    stats.sections.forEach((section) => {
+      ensureSpace(42);
+      const rowY = doc.y;
+      write(section.title, { x: 42, y: rowY, width: 230, size: 8, bold: true });
+      write(`${section.items.filter((item) => item.response.status).length}/${section.items.length} answered`, {
+        x: 42,
+        y: rowY + 13,
+        width: 230,
+        size: 6,
+        color: colors.muted,
+      });
+      const barX = 284;
+      const barWidth = 218;
+      doc.roundedRect(barX, rowY + 8, barWidth, 4, 2).fill('#edf1ee');
+      doc.roundedRect(barX, rowY + 8, Math.max(2, barWidth * section.score / 100), 4, 2).fill(colors.green);
+      const sectionTone = section.score >= 85 ? colors.green : section.score >= 70 ? colors.gold : colors.red;
+      doc.roundedRect(514, rowY + 1, 38, 22, 10).fill(sectionTone === colors.green ? colors.mint : section.score >= 70 ? '#faf1d5' : '#f8e5e1');
+      write(`${section.score}%`, { x: 514, y: rowY + 7, width: 38, size: 7, color: sectionTone, align: 'center', bold: true });
+      doc.y = rowY + 32;
+      drawRule(doc.y);
+      doc.y += 8;
+    });
+
+    sectionHeading('02', 'Attention markers');
+    if (stats.gaps.length === 0) {
+      write('No gaps recorded in this inspection.', { size: 8, color: colors.muted });
+      doc.moveDown();
+    } else {
+      stats.gaps.forEach((item) => {
+        const status = stats.statusLabel(item.response.status);
+        const titleHeight = doc.heightOfString(item.text, { width: 440, font: 'Helvetica-Bold', fontSize: 8 });
+        const detailText = `${item.sectionTitle} | ${status}${item.response.remark ? ` | ${item.response.remark}` : ''}`;
+        const detailHeight = doc.heightOfString(detailText, { width: 440, font: 'Helvetica', fontSize: 6 });
+        const rowHeight = Math.max(31, titleHeight + detailHeight + 10);
+        ensureSpace(rowHeight);
+        const y = doc.y;
+        const severity = item.severity || 'open';
+        const badgeColor = severity === 'critical' ? '#f8e5e1' : '#faf1d5';
+        const badgeText = severity === 'critical' ? colors.red : colors.gold;
+        doc.roundedRect(42, y + 1, 35, 14, 3).fill(badgeColor);
+        write(severity.toUpperCase(), { x: 44, y: y + 5, width: 31, size: 5, bold: true, color: badgeText, align: 'center' });
+        write(item.text, { x: 88, y, width: 464, size: 8, bold: true });
+        write(detailText, { x: 88, y: y + titleHeight + 4, width: 464, size: 6, color: colors.muted });
+        doc.y = y + rowHeight;
+        drawRule(doc.y);
+        doc.y += 7;
+      });
+    }
+
+    sectionHeading('03', 'Assessment detail');
+    stats.sections.forEach((section) => {
+      ensureSpace(30);
+      write(section.title, { size: 10, bold: true, color: colors.teal });
+      doc.moveDown(0.5);
+      section.items.forEach((item) => {
+        const responseData = item.response;
+        const label = stats.statusLabel(responseData.status);
+        const statusColor = ['met', 'available'].includes(responseData.status)
+          ? colors.green
+          : ['partial', 'na'].includes(responseData.status)
+            ? colors.gold
+            : ['unmet', 'not-available'].includes(responseData.status)
+              ? colors.red
+              : colors.muted;
+        const itemHeight = doc.heightOfString(item.text, { width: 425, font: 'Helvetica', fontSize: 7 });
+        const remarkHeight = responseData.remark
+          ? doc.heightOfString(`Remark: ${responseData.remark}`, { width: 425, font: 'Helvetica', fontSize: 6 })
+          : 0;
+        const rowHeight = Math.max(20, itemHeight + remarkHeight + 9);
+        ensureSpace(rowHeight);
+        const y = doc.y;
+        doc.circle(45, y + 5, 2.5).fill(statusColor);
+        write(item.text, { x: 55, y, width: 410, size: 7 });
+        write(label, { x: 468, y, width: 84, size: 6, color: statusColor, align: 'right' });
+        if (responseData.remark) {
+          write(`Remark: ${responseData.remark}`, { x: 55, y: y + itemHeight + 3, width: 410, size: 6, color: colors.muted });
+        }
+        doc.y = y + rowHeight;
+        drawRule(doc.y, '#eef2ef');
+        doc.y += 5;
+      });
+      doc.moveDown(0.6);
+    });
+
+    sectionHeading('04', 'Visit notes');
+    write(metadata.notes || 'No additional visit note was recorded.', { size: 8 });
+    doc.moveDown();
+    write(`Process owner: ${metadata.processOwner || '—'}`, { size: 8 });
+    write(`Lead assessor: ${metadata.assessor || '—'}`, { size: 8 });
+    doc.moveDown();
+    write('Inspection team sign-off', { size: 10, bold: true, color: colors.teal });
+    doc.moveDown(0.5);
     (record.signatures?.inspectors || []).forEach((inspector, index) => {
-      if (doc.y > 690) doc.addPage();
-      line(`Inspector ${index + 1}: ${inspector.name || '—'}`, 9, { bold: true });
+      ensureSpace(62);
+      write(`Inspector ${index + 1}: ${inspector.name || '—'}`, { size: 8, bold: true });
       const image = signatureImage(inspector.signature);
       if (image) {
         const imageY = doc.y + 3;
         doc.image(image, 48, imageY, { fit: [180, 45] });
         doc.y = imageY + 50;
+      } else {
+        doc.y += 14;
       }
     });
-    if (doc.y > 690) doc.addPage();
-    line(`Pharmacist: ${record.signatures?.pharmacist?.name || '—'}`, 9, { bold: true });
+    ensureSpace(62);
+    write(`Pharmacist: ${record.signatures?.pharmacist?.name || '—'}`, { size: 8, bold: true });
     const pharmacistSignature = signatureImage(record.signatures?.pharmacist?.signature);
     if (pharmacistSignature) {
       const imageY = doc.y + 3;
       doc.image(pharmacistSignature, 48, imageY, { fit: [180, 45] });
       doc.y = imageY + 50;
+    } else {
+      doc.y += 14;
     }
-    line(`Date: ${record.completedAt || record.updatedAt || '____________________________'}`);
-    doc.moveDown(1);
-    line(`Generated by CareAudit admin review · ${new Date().toISOString()}`, 8, { color: '#5f7270' });
+    write(`Date: ${dateText(record.completedAt || record.updatedAt)}`, { size: 7, color: colors.muted });
+
+    const pages = doc.bufferedPageRange();
+    for (let index = 0; index < pages.count; index += 1) {
+      doc.switchToPage(pages.start + index);
+      const footerY = doc.page.height - doc.page.margins.bottom - 12;
+      drawRule(footerY);
+      write(`CareAudit | Source checklist: ${template.sourceFile}`, { x: 42, y: footerY + 5, width: 390, size: 6, color: colors.muted });
+      write(`Page ${index + 1} of ${pages.count}`, { x: 460, y: footerY + 5, width: 92, size: 6, color: colors.muted, align: 'right' });
+    }
     doc.end();
+  } catch (error) { next(error); }
+});
+
+app.get('/api/inspections/:id/export/:format', authenticated, adminOnly, async (request, response, next) => {
+  try {
+    const format = request.params.format;
+    if (!['xlsx', 'docx'].includes(format)) return response.status(400).json({ error: 'Choose an Excel or Word export.' });
+    const row = one('SELECT payload FROM careaudit_inspections WHERE record_id = ? LIMIT 1', request.params.id);
+    if (!row) return response.status(404).json({ error: 'Submitted inspection not found.' });
+    const record = parsePayload(row.payload);
+    const template = checklistTemplates.find((item) => item.id === record.templateId);
+    if (!template) return response.status(422).json({ error: 'The source checklist for this inspection is unavailable.' });
+
+    const stats = reportData(record, template);
+    const metadata = record.metadata || {};
+    const completedAt = record.completedAt || record.updatedAt || '—';
+    const safeName = (metadata.facilityName || 'inspection').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase() || 'inspection';
+    const reportTitle = metadata.facilityName || 'Untitled facility';
+    const detailRows = stats.sections.flatMap((section) => section.items.map((item) => [
+      section.title,
+      item.text,
+      stats.statusLabel(item.response.status),
+      item.severity || '—',
+      item.response.remark || '—',
+    ]));
+    const metadataRows = [
+      ['Facility', reportTitle],
+      ['Checklist', template.title],
+      ['Inspection type', metadata.inspectionType || 'Inspection'],
+      ['Completed', completedAt],
+      ['Facility address', metadata.facilityAddress || '—'],
+      ['Location', [metadata.region, metadata.zone, metadata.woreda, metadata.town, metadata.kebele, metadata.houseNo].filter(Boolean).join(' · ') || '—'],
+      ['Licensed professional', [metadata.professionalName, metadata.profession].filter(Boolean).join(' · ') || '—'],
+      ['Facility head', metadata.headName || '—'],
+      ['Owner / operator', metadata.ownerName || '—'],
+      ['Facility license no. / date', [metadata.licenseNo, metadata.licenseDate].filter(Boolean).join(' · ') || '—'],
+      ['Valid trade license', metadata.tradeLicenseStatus || 'Not recorded'],
+      ['Phone / P.O. Box', [metadata.contact, metadata.poBox].filter(Boolean).join(' · ') || '—'],
+      ['Annual patient load', metadata.annualLoad || '—'],
+      ['Lead assessor', metadata.assessor || '—'],
+      ['Process owner', metadata.processOwner || '—'],
+      ['Visit notes', metadata.notes || 'No additional visit note was recorded.'],
+      ['Inspectors', (record.signatures?.inspectors || []).map((inspector) => inspector.name).filter(Boolean).join(', ') || '—'],
+      ['Pharmacist', record.signatures?.pharmacist?.name || '—'],
+    ];
+
+    if (format === 'xlsx') {
+      const workbook = new ExcelJS.Workbook();
+      workbook.creator = 'CareAudit';
+      workbook.created = new Date();
+      const summary = workbook.addWorksheet('Report summary');
+      summary.columns = [
+        { key: 'field', width: 36 },
+        { key: 'value', width: 68 },
+        { key: 'details', width: 34 },
+      ];
+      summary.addRow(['CareAudit | Final inspection report', '', '']);
+      summary.mergeCells('A1:C1');
+      summary.addRow(['Facility', reportTitle, '']);
+      summary.addRow(['Checklist', template.title, '']);
+      summary.addRow(['Inspection type', metadata.inspectionType || 'Inspection', '']);
+      summary.addRow(['Completed', completedAt, '']);
+      summary.addRow([]);
+      summary.addRow(['OVERALL COMPLIANCE', `${stats.score}%`, '']);
+      summary.addRow(['Critical markers', stats.critical, '']);
+      summary.addRow(['Major markers', stats.major, '']);
+      summary.addRow(['Unanswered requirements', stats.unanswered, '']);
+      summary.addRow([]);
+      summary.addRow(['FACILITY INFORMATION', 'Value', '']);
+      metadataRows.slice(4, 15).forEach(([field, value]) => summary.addRow([field, value, '']));
+      metadataRows.slice(15).forEach(([field, value]) => summary.addRow([field, value, '']));
+      summary.addRow([]);
+      summary.addRow(['SECTION SCORES', 'Score', 'Answered']);
+      stats.sections.forEach((section) => {
+        summary.addRow([
+          section.title,
+          `${section.score}%`,
+          `${section.items.filter((item) => item.response.status).length}/${section.items.length}`,
+        ]);
+      });
+      summary.eachRow((line, rowNumber) => {
+        line.eachCell((cell) => {
+          cell.alignment = { vertical: 'top', wrapText: true };
+          if ([1, 12, 28].includes(rowNumber)) {
+            cell.font = { bold: true, color: { argb: 'FF0B6B67' } };
+          }
+          if (rowNumber === 7) cell.font = { bold: true, size: 14, color: { argb: 'FF0B6B67' } };
+        });
+      });
+      summary.getRow(1).font = { bold: true, size: 16, color: { argb: 'FFFFFFFF' } };
+      summary.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0B6B67' } };
+      [12, 28].forEach((rowNumber) => {
+        summary.getRow(rowNumber).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFEAF4ED' } };
+      });
+      summary.views = [{ state: 'frozen', ySplit: 1 }];
+
+      const details = workbook.addWorksheet('Assessment detail');
+      details.columns = [
+        { header: 'Checklist section', key: 'section', width: 38 },
+        { header: 'Requirement', key: 'requirement', width: 90 },
+        { header: 'Response', key: 'response', width: 22 },
+        { header: 'Severity', key: 'severity', width: 16 },
+        { header: 'Inspector remark', key: 'remark', width: 60 },
+      ];
+      detailRows.forEach((values) => details.addRow(values));
+      details.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+      details.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0B6B67' } };
+      details.getRow(1).alignment = { vertical: 'middle', wrapText: true };
+      details.eachRow((line) => line.eachCell((cell) => {
+        cell.alignment = { vertical: 'top', wrapText: true };
+      }));
+      details.views = [{ state: 'frozen', ySplit: 1 }];
+      details.autoFilter = { from: 'A1', to: 'E1' };
+
+      const attention = workbook.addWorksheet('Attention markers');
+      attention.columns = [
+        { header: 'Severity', key: 'severity', width: 16 },
+        { header: 'Checklist section', key: 'section', width: 38 },
+        { header: 'Requirement', key: 'requirement', width: 80 },
+        { header: 'Response', key: 'response', width: 22 },
+        { header: 'Inspector remark', key: 'remark', width: 60 },
+      ];
+      const attentionRows = stats.gaps.map((item) => [
+        item.severity || 'Open',
+        item.sectionTitle,
+        item.text,
+        stats.statusLabel(item.response.status),
+        item.response.remark || '—',
+      ]);
+      if (attentionRows.length) attentionRows.forEach((values) => attention.addRow(values));
+      else attention.addRow(['None', 'No gaps recorded in this inspection.', '—', '—', '—']);
+      attention.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+      attention.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0B6B67' } };
+      attention.eachRow((line) => line.eachCell((cell) => {
+        cell.alignment = { vertical: 'top', wrapText: true };
+      }));
+      attention.views = [{ state: 'frozen', ySplit: 1 }];
+      attention.autoFilter = { from: 'A1', to: 'E1' };
+      workbook.views = [{ activeTab: 0 }];
+
+      const buffer = await workbook.xlsx.writeBuffer();
+      response.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+      response.setHeader('Content-Disposition', `attachment; filename="careaudit-${safeName}.xlsx"`);
+      return response.send(Buffer.from(buffer));
+    }
+
+    const paragraph = (text, options = {}) => new Paragraph({
+      children: [new TextRun({
+        text: String(text ?? '—'),
+        font: 'Aptos',
+        size: options.size || 20,
+        bold: Boolean(options.bold),
+        color: options.color || '173533',
+      })],
+      heading: options.heading,
+      spacing: { before: options.before || 0, after: options.after === undefined ? 100 : options.after },
+    });
+    const heading = (text, level = HeadingLevel.HEADING_2) => paragraph(text, {
+      heading: level,
+      bold: true,
+      color: '0B6B67',
+      size: level === HeadingLevel.HEADING_1 ? 32 : 24,
+      before: level === HeadingLevel.HEADING_1 ? 220 : 300,
+      after: 120,
+    });
+    const makeTable = (headers, rows, widths) => {
+      const border = { style: BorderStyle.SINGLE, size: 4, color: 'DCE5E0' };
+      const cell = (value, header, width) => new TableCell({
+        children: [paragraph(value, { bold: header, color: header ? 'FFFFFF' : '173533', size: 18, after: 0 })],
+        width: { size: width, type: WidthType.DXA },
+        margins: { top: 90, bottom: 90, left: 100, right: 100 },
+        ...(header ? { shading: { type: ShadingType.CLEAR, fill: '0B6B67' } } : {}),
+        borders: { top: border, bottom: border, left: border, right: border },
+      });
+      const tableRows = [
+        new TableRow({ children: headers.map((value, index) => cell(value, true, widths[index])) }),
+        ...rows.map((values) => new TableRow({ children: values.map((value, index) => cell(value, false, widths[index])) })),
+      ];
+      return new Table({
+        rows: tableRows,
+        width: { size: widths.reduce((sum, width) => sum + width, 0), type: WidthType.DXA },
+        columnWidths: widths,
+      });
+    };
+    const children = [
+      paragraph('CareAudit', { heading: HeadingLevel.TITLE, bold: true, color: '0B6B67', size: 36, after: 50 }),
+      paragraph('FACILITY COMPLIANCE  |  FINAL INSPECTION REPORT', { size: 16, color: '71817D', after: 240 }),
+      heading(reportTitle, HeadingLevel.HEADING_1),
+      paragraph(`${template.title} | ${metadata.inspectionType || 'Inspection'} visit | completed ${completedAt}`, { size: 18, color: '71817D', after: 220 }),
+      paragraph(`OVERALL COMPLIANCE: ${stats.score}%`, { bold: true, color: stats.score >= 85 ? '43845B' : stats.score >= 70 ? 'AA822B' : 'B2604E', size: 28, after: 100 }),
+      paragraph(`${stats.critical} critical markers | ${stats.major} major markers | ${stats.unanswered} unanswered requirements`, { size: 18, color: '71817D' }),
+      heading('Facility information'),
+      makeTable(['Report field', 'Value'], metadataRows, [2800, 6570]),
+      heading('Section scores'),
+      makeTable(
+        ['Checklist section', 'Score', 'Answered'],
+        stats.sections.map((section) => [
+          section.title,
+          `${section.score}%`,
+          `${section.items.filter((item) => item.response.status).length}/${section.items.length}`,
+        ]),
+        [5800, 1500, 2070],
+      ),
+      heading('Attention markers'),
+      ...(stats.gaps.length
+        ? [makeTable(
+          ['Severity', 'Checklist section', 'Requirement', 'Response / remark'],
+          stats.gaps.map((item) => [
+            item.severity || 'Open',
+            item.sectionTitle,
+            item.text,
+            `${stats.statusLabel(item.response.status)}${item.response.remark ? ` | ${item.response.remark}` : ''}`,
+          ]),
+          [1200, 2300, 3900, 1970],
+        )]
+        : [paragraph('No gaps recorded in this inspection.')]),
+      heading('Assessment detail'),
+      ...stats.sections.flatMap((section) => [
+        heading(section.title, HeadingLevel.HEADING_3),
+        makeTable(
+          ['Requirement', 'Response', 'Severity', 'Inspector remark'],
+          section.items.map((item) => [
+            item.text,
+            stats.statusLabel(item.response.status),
+            item.severity || '—',
+            item.response.remark || '—',
+          ]),
+          [4860, 1450, 1050, 2010],
+        ),
+      ]),
+      heading('Visit notes'),
+      paragraph(metadata.notes || 'No additional visit note was recorded.'),
+      heading('Inspection team sign-off'),
+      makeTable(
+        ['Role', 'Name'],
+        [
+          ...(record.signatures?.inspectors || []).map((inspector, index) => [`Inspector ${index + 1}`, inspector.name || '—']),
+          ['Pharmacist', record.signatures?.pharmacist?.name || '—'],
+          ['Lead assessor', metadata.assessor || '—'],
+          ['Process owner', metadata.processOwner || '—'],
+        ],
+        [2800, 6570],
+      ),
+      paragraph(`Source checklist: ${template.sourceFile}`, { size: 16, color: '71817D', before: 240 }),
+      paragraph(`Generated by CareAudit admin review | ${new Date().toISOString()}`, { size: 14, color: '71817D' }),
+    ];
+    const document = new Document({
+      creator: 'CareAudit',
+      title: `CareAudit inspection report - ${reportTitle}`,
+      description: `${template.title} inspection report`,
+      sections: [{
+        properties: { page: { margin: { top: 720, right: 720, bottom: 720, left: 720 } } },
+        children,
+      }],
+    });
+    const buffer = await Packer.toBuffer(document);
+    response.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+    response.setHeader('Content-Disposition', `attachment; filename="careaudit-${safeName}.docx"`);
+    return response.send(buffer);
   } catch (error) { next(error); }
 });
 

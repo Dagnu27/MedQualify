@@ -278,6 +278,7 @@ h2, h3 { letter-spacing: -.055em; }
 .account-status.active { color: #4d9367; }.account-status.inactive { color: #ad8a31; }
 .roster-action { border: 0; background: transparent; color: #9caca6; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 7px; }
 .roster-action:hover { color: var(--teal); background: #edf6f0; }
+.roster-action.archive-action:hover { color: #b6654f; background: #fbefeb; }
 .roster-empty { border-top: 1px solid var(--line); margin-top: 21px; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #6a8878; text-align: center; }
 .roster-empty strong { color: var(--ink); font-size: 13px; }.roster-empty span { color: var(--muted); font: 10px var(--mono); }
 .team-security-note { display: flex; align-items: center; gap: 9px; color: #6a8878; background: #edf7f0; border: 1px solid #d3e9d9; border-radius: 10px; padding: 13px 15px; margin-top: 17px; font-size: 11px; line-height: 1.45; }.team-security-note strong { color: #396b50; margin-right: 5px; }
