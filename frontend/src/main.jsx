@@ -112,7 +112,7 @@ function createInspection(templateId) {
     metadata: { ...DEFAULT_META },
     responses: {},
     signatures: {
-      inspectors: Array.from({ length: 3 }, () => ({ name: '', signature: '' })),
+      inspectors: [{ name: '', signature: '' }],
       pharmacist: { name: '', signature: '' },
     },
   };
@@ -124,9 +124,9 @@ function getInspectionSignatures(record) {
     ? saved.inspectors.map((inspector) => ({
       name: typeof inspector?.name === 'string' ? inspector.name : '',
       signature: typeof inspector?.signature === 'string' ? inspector.signature : '',
-    }))
+    })).filter((inspector, index) => index === 0 || inspector.name.trim() || inspector.signature)
     : [];
-  while (inspectors.length < 3) inspectors.push({ name: '', signature: '' });
+  if (inspectors.length === 0) inspectors.push({ name: '', signature: '' });
   return {
     inspectors,
     pharmacist: {
@@ -833,7 +833,7 @@ function AuditItem({ item, number, response, onStatus, onRemark }) {
 function Summary({ record, template, onUpdate, onAudit, onFinalize, onReport }) {
   const stats = getStats(template, record);
   const signatures = getInspectionSignatures(record);
-  const signatoriesComplete = signatures.inspectors.every(isCompleteSigner) && isCompleteSigner(signatures.pharmacist);
+  const signatoriesComplete = isCompleteSigner(signatures.inspectors[0]) && isCompleteSigner(signatures.pharmacist);
   const canFinalize = stats.unanswered.length === 0 && signatoriesComplete;
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -876,7 +876,7 @@ function Summary({ record, template, onUpdate, onAudit, onFinalize, onReport }) 
       <div className="summary-actions panel">
         <div className="eyebrow">NEXT STEP</div>
         <h3>{canFinalize ? 'Ready to submit to admin.' : stats.unanswered.length ? `${stats.unanswered.length} required ${stats.unanswered.length === 1 ? 'item remains' : 'items remain'}.` : 'Signatures are required.'}</h3>
-        <p>{canFinalize ? 'Submit this completed inspection to the shared admin review desk, then open the print-ready report.' : stats.unanswered.length ? 'Complete every required checklist item before sign-off.' : 'Add at least three inspector names and drawn signatures, plus the pharmacist’s name and drawn signature.'}</p>
+        <p>{canFinalize ? 'Submit this completed inspection to the shared admin review desk, then open the print-ready report.' : stats.unanswered.length ? 'Complete every required checklist item before sign-off.' : 'Add one inspector name and drawn signature, plus the pharmacist’s name and drawn signature.'}</p>
         {error && <div className="auth-error"><XCircle size={15} /> {error}</div>}
         <button className="button primary full" disabled={!canFinalize || busy} onClick={finalize}>{canFinalize ? <><FileCheck2 size={16} /> {busy ? 'Submitting…' : 'Submit & open report'}</> : <><Clock3 size={16} /> Complete sign-off first</>}</button>
         {stats.unanswered.length > 0 && <button className="text-button centered" onClick={returnToGap}>Jump to first open item <ArrowRight size={15} /></button>}
@@ -887,10 +887,10 @@ function Summary({ record, template, onUpdate, onAudit, onFinalize, onReport }) 
         <div><div className="eyebrow">REQUIRED REPORT SIGN-OFF</div><h2>Inspection team signatures</h2></div>
         <button className="button ghost compact" onClick={() => onUpdate(record.id, { signatures: { ...signatures, inspectors: [...signatures.inspectors, { name: '', signature: '' }] } })}><Plus size={14} /> Add inspector</button>
       </div>
-      <p className="signoff-intro">Collect drawn digital signatures from at least three inspectors and the responsible pharmacist before submitting.</p>
+      <p className="signoff-intro">One inspector name and drawn signature, plus the responsible pharmacist’s name and signature, are required. Additional inspectors are optional.</p>
       <div className="inspector-signature-list">
         {signatures.inspectors.map((inspector, index) => <div className="signature-card" key={`inspector-${index}`}>
-          <label className="field"><span>Inspector {index + 1} full name <b>*</b></span><input value={inspector.name} onChange={(event) => updateInspector(index, { name: event.target.value })} placeholder="Enter inspector name" /></label>
+          <label className="field"><span>Inspector {index + 1} full name {index === 0 ? <b>*</b> : <small>(optional)</small>}</span><input value={inspector.name} onChange={(event) => updateInspector(index, { name: event.target.value })} placeholder="Enter inspector name" /></label>
           <SignaturePad label={`Inspector ${index + 1} signature`} value={inspector.signature} onChange={(signature) => updateInspector(index, { signature })} />
         </div>)}
       </div>

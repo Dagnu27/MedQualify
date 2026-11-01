@@ -845,8 +845,8 @@ app.post('/api/inspections/submit', authenticated, async (request, response, nex
       return response.status(400).json({ error: 'A completed inspection with a facility name is required.' });
     }
     const inspectors = record.signatures?.inspectors;
-    if (!Array.isArray(inspectors) || inspectors.length < 3 || !inspectors.every(completeSigner) || !completeSigner(record.signatures?.pharmacist)) {
-      return response.status(400).json({ error: 'At least three inspector names and drawn signatures, plus the pharmacist name and drawn signature, are required.' });
+    if (!Array.isArray(inspectors) || !completeSigner(inspectors[0]) || !completeSigner(record.signatures?.pharmacist)) {
+      return response.status(400).json({ error: 'One inspector name and drawn signature, plus the pharmacist name and drawn signature, are required.' });
     }
     const payload = JSON.stringify({ ...record, status: 'completed' });
     const existing = one('SELECT inspector_id FROM careaudit_inspections WHERE record_id = ? LIMIT 1', record.id);
