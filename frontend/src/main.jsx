@@ -998,7 +998,24 @@ function Report({ record, template, isAdmin, onAudit, onSummary, onBack }) {
         const payload = await response.json().catch(() => null);
         throw new Error(payload?.error || `The ${format.toUpperCase()} report could not be generated.`);
       }
+      const expectedContentType = {
+        pdf: 'application/pdf',
+        xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      }[format];
+      const contentType = response.headers.get('content-type')?.split(';')[0].trim().toLowerCase();
+      if (contentType !== expectedContentType) {
+        throw new Error(contentType === 'text/html'
+          ? 'The server returned a web page instead of the report. Restart the backend or redeploy the latest version, then try again.'
+          : `The server returned an unexpected file type for the ${format.toUpperCase()} report.`);
+      }
       const blob = await response.blob();
+      const signatureLength = format === 'pdf' ? 5 : 4;
+      const signature = new Uint8Array(await blob.slice(0, signatureLength).arrayBuffer());
+      const expectedSignature = format === 'pdf' ? [37, 80, 68, 70, 45] : [80, 75, 3, 4];
+      if (blob.size === 0 || !expectedSignature.every((byte, index) => signature[index] === byte)) {
+        throw new Error(`The downloaded ${format.toUpperCase()} report is empty or invalid. Restart the backend or redeploy the latest version, then try again.`);
+      }
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
