@@ -169,12 +169,17 @@ async function ensureSchema() {
     facility_name TEXT NOT NULL,
     template_id TEXT NOT NULL,
     payload TEXT NOT NULL CHECK (json_valid(payload)),
+    status TEXT NOT NULL DEFAULT 'completed' CHECK (status IN ('draft', 'completed')),
     submitted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (inspector_id) REFERENCES careaudit_users(id) ON DELETE CASCADE
   );
   CREATE INDEX IF NOT EXISTS idx_careaudit_inspections_inspector ON careaudit_inspections(inspector_id);
   CREATE INDEX IF NOT EXISTS idx_careaudit_inspections_submitted ON careaudit_inspections(submitted_at);`);
+  const inspectionColumns = all('PRAGMA table_info(careaudit_inspections)');
+  if (!inspectionColumns.some((column) => column.name === 'status')) {
+    db.exec("ALTER TABLE careaudit_inspections ADD COLUMN status TEXT NOT NULL DEFAULT 'completed' CHECK (status IN ('draft', 'completed'))");
+  }
   const admins = all("SELECT id FROM careaudit_users WHERE role = 'admin' LIMIT 1");
   if (admins.length === 0) {
     run('INSERT INTO careaudit_users (id, role, name, username, password_hash) VALUES (?, \'admin\', ?, ?, ?)', id(), defaultAdmin.name, defaultAdmin.username, await bcrypt.hash(defaultAdmin.password, 12));
@@ -304,23 +309,67 @@ app.put('/api/admin/profile', authenticated, adminOnly, async (request, response
 app.get('/api/inspections', authenticated, async (request, response, next) => {
   try {
     const rows = request.user.role === 'admin'
-      ? all(`SELECT i.record_id, i.payload, i.submitted_at, u.name AS inspector_name
+      ? all(`SELECT i.record_id, i.payload, i.status, i.submitted_at, u.name AS inspector_name
         FROM careaudit_inspections i
         JOIN careaudit_users u ON u.id = i.inspector_id
+        WHERE i.status = 'completed'
         ORDER BY i.submitted_at DESC`)
-      : all(`SELECT i.record_id, i.payload, i.submitted_at, u.name AS inspector_name
+      : all(`SELECT i.record_id, i.payload, i.status, i.submitted_at, i.updated_at, u.name AS inspector_name
         FROM careaudit_inspections i
         JOIN careaudit_users u ON u.id = i.inspector_id
         WHERE i.inspector_id = ?
-        ORDER BY i.submitted_at DESC`, request.user.id);
+        ORDER BY i.updated_at DESC`, request.user.id);
     const inspections = rows.map((row) => ({
       ...parsePayload(row.payload),
       id: row.record_id,
-      status: 'completed',
+      status: row.status,
       submittedAt: row.submitted_at,
       inspectorName: row.inspector_name,
     }));
     response.json({ inspections });
+  } catch (error) { next(error); }
+});
+
+app.put('/api/inspections/:id', authenticated, async (request, response, next) => {
+  try {
+    if (request.user.role !== 'inspector') return response.status(403).json({ error: 'Only inspectors can save inspections.' });
+    const record = request.body?.record;
+    if (!record?.id || record.id !== request.params.id || !record.templateId || !['draft', 'completed'].includes(record.status)) {
+      return response.status(400).json({ error: 'A valid inspection record is required.' });
+    }
+    if (!checklistTemplates.some((template) => template.id === record.templateId)) {
+      return response.status(400).json({ error: 'The selected checklist is not available.' });
+    }
+    if (record.status === 'completed') {
+      if (!record.metadata?.facilityName?.trim()) return response.status(400).json({ error: 'A facility name is required to complete an inspection.' });
+      const inspectors = record.signatures?.inspectors;
+      if (!Array.isArray(inspectors) || !completeSigner(inspectors[0]) || !completeSigner(record.signatures?.pharmacist)) {
+        return response.status(400).json({ error: 'One inspector name and drawn signature, plus the pharmacist name and drawn signature, are required.' });
+      }
+    }
+    const existing = one('SELECT inspector_id FROM careaudit_inspections WHERE record_id = ? LIMIT 1', record.id);
+    if (existing && existing.inspector_id !== request.user.id) return response.status(403).json({ error: 'This inspection belongs to another inspector.' });
+    const facilityName = typeof record.metadata?.facilityName === 'string' ? record.metadata.facilityName.trim() : '';
+    const payload = JSON.stringify(record);
+    run(`INSERT INTO careaudit_inspections (record_id, inspector_id, facility_name, template_id, payload, status)
+      VALUES (?, ?, ?, ?, ?, ?)
+      ON CONFLICT(record_id) DO UPDATE SET
+        payload = excluded.payload,
+        facility_name = excluded.facility_name,
+        template_id = excluded.template_id,
+        status = excluded.status,
+        updated_at = CURRENT_TIMESTAMP`,
+    record.id, request.user.id, facilityName, record.templateId, payload, record.status);
+    response.json({ ok: true, recordId: record.id });
+  } catch (error) { next(error); }
+});
+
+app.delete('/api/inspections/:id', authenticated, async (request, response, next) => {
+  try {
+    if (request.user.role !== 'inspector') return response.status(403).json({ error: 'Only inspectors can delete inspections.' });
+    const result = run('DELETE FROM careaudit_inspections WHERE record_id = ? AND inspector_id = ?', request.params.id, request.user.id);
+    if (!result.changes) return response.status(404).json({ error: 'Inspection not found.' });
+    response.json({ ok: true });
   } catch (error) { next(error); }
 });
 
@@ -851,9 +900,9 @@ app.post('/api/inspections/submit', authenticated, async (request, response, nex
     const payload = JSON.stringify({ ...record, status: 'completed' });
     const existing = one('SELECT inspector_id FROM careaudit_inspections WHERE record_id = ? LIMIT 1', record.id);
     if (existing && existing.inspector_id !== request.user.id) return response.status(403).json({ error: 'This inspection belongs to another inspector.' });
-    run(`INSERT INTO careaudit_inspections (record_id, inspector_id, facility_name, template_id, payload, submitted_at)
-      VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
-      ON CONFLICT(record_id) DO UPDATE SET payload = excluded.payload, facility_name = excluded.facility_name, template_id = excluded.template_id, submitted_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP`,
+    run(`INSERT INTO careaudit_inspections (record_id, inspector_id, facility_name, template_id, payload, status, submitted_at)
+      VALUES (?, ?, ?, ?, ?, 'completed', CURRENT_TIMESTAMP)
+      ON CONFLICT(record_id) DO UPDATE SET payload = excluded.payload, facility_name = excluded.facility_name, template_id = excluded.template_id, status = 'completed', submitted_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP`,
     record.id, request.user.id, record.metadata.facilityName.trim(), record.templateId, payload);
     response.status(201).json({ ok: true, recordId: record.id });
   } catch (error) { next(error); }

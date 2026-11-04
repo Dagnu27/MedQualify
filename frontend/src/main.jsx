@@ -336,8 +336,15 @@ function getInitialRoute() {
 }
 
 function App({ currentUser, authStore, onAddInspector, onToggleInspector, onResetInspector, onAdminChange, onLogout }) {
-  const [records, setRecords] = useState(() => currentUser.role === 'admin' ? [] : loadRecords());
-  const [recordsLoading, setRecordsLoading] = useState(currentUser.role === 'admin');
+  const [records, setRecords] = useState([]);
+  const [recordsLoading, setRecordsLoading] = useState(true);
+  const [recordsLoadError, setRecordsLoadError] = useState('');
+  const [recordsSaveError, setRecordsSaveError] = useState('');
+  const [recordsLoadAttempt, setRecordsLoadAttempt] = useState(0);
+  const [recordsSaveAttempt, setRecordsSaveAttempt] = useState(0);
+  const syncedRecords = useRef(new Map());
+  const saveQueue = useRef(Promise.resolve());
+  const saveTimer = useRef(null);
   const initialRoute = useMemo(getInitialRoute, []);
   const [view, setView] = useState(initialRoute.view);
   const [activeRecordId, setActiveRecordId] = useState(initialRoute.recordId);
@@ -346,31 +353,71 @@ function App({ currentUser, authStore, onAddInspector, onToggleInspector, onRese
   const [mobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
-    if (currentUser.role === 'inspector') window.localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
-  }, [records, currentUser.role]);
-
-  useEffect(() => {
-    if (currentUser.role !== 'admin') return undefined;
     let active = true;
     setRecordsLoading(true);
-    apiRequest('/inspections').then(({ inspections }) => {
-      if (active) setRecords(inspections || []);
-    }).catch(() => {
-      if (active) setRecords([]);
-    }).finally(() => {
-      if (active) setRecordsLoading(false);
-    });
+    setRecordsLoadError('');
+    (async () => {
+      try {
+        const { inspections = [] } = await apiRequest('/inspections');
+        let accountRecords = inspections;
+        if (currentUser.role === 'inspector') {
+          const knownIds = new Set(accountRecords.map((record) => record.id));
+          const legacyRecords = loadRecords().filter((record) => record?.id && !knownIds.has(record.id));
+          for (const legacyRecord of legacyRecords) {
+            const record = { ...legacyRecord, status: legacyRecord.status === 'completed' ? 'completed' : 'draft' };
+            await apiRequest(`/inspections/${encodeURIComponent(record.id)}`, {
+              method: 'PUT',
+              body: JSON.stringify({ record }),
+            });
+            accountRecords = [...accountRecords, record];
+          }
+          window.localStorage.removeItem(STORAGE_KEY);
+        }
+        if (active) {
+          syncedRecords.current = new Map(accountRecords.map((record) => [record.id, JSON.stringify(record)]));
+          setRecords(accountRecords);
+        }
+      } catch (error) {
+        if (active) setRecordsLoadError(error.message);
+      } finally {
+        if (active) setRecordsLoading(false);
+      }
+    })();
     return () => { active = false; };
-  }, [currentUser.role]);
+  }, [currentUser.id, currentUser.role, recordsLoadAttempt]);
 
   useEffect(() => {
-    if (currentUser.role === 'inspector' && view === 'new' && !activeRecordId) {
+    if (currentUser.role !== 'inspector' || recordsLoading || recordsLoadError) return undefined;
+    saveTimer.current = window.setTimeout(() => {
+      saveQueue.current = saveQueue.current.then(async () => {
+        for (const record of records) {
+          const serialized = JSON.stringify(record);
+          if (syncedRecords.current.get(record.id) === serialized) continue;
+          try {
+            await apiRequest(`/inspections/${encodeURIComponent(record.id)}`, {
+              method: 'PUT',
+              body: JSON.stringify({ record }),
+            });
+            syncedRecords.current.set(record.id, serialized);
+            setRecordsSaveError('');
+          } catch (error) {
+            setRecordsSaveError(`Could not save your changes to the shared account: ${error.message}`);
+            return;
+          }
+        }
+      });
+    }, 600);
+    return () => window.clearTimeout(saveTimer.current);
+  }, [records, currentUser.role, recordsLoading, recordsLoadError, recordsSaveAttempt]);
+
+  useEffect(() => {
+    if (currentUser.role === 'inspector' && !recordsLoading && !recordsLoadError && view === 'new' && !activeRecordId) {
       const record = createInspection(selectedTemplateId);
       setRecords((current) => [record, ...current]);
       setActiveRecordId(record.id);
       window.history.replaceState({}, '', `/new`);
     }
-  }, [view, activeRecordId, selectedTemplateId, currentUser.role]);
+  }, [view, activeRecordId, selectedTemplateId, currentUser.role, recordsLoading, recordsLoadError]);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -421,7 +468,7 @@ function App({ currentUser, authStore, onAddInspector, onToggleInspector, onRese
   };
 
   const startInspection = (templateId = selectedTemplateId) => {
-    if (currentUser.role !== 'inspector') return;
+    if (currentUser.role !== 'inspector' || recordsLoading || recordsLoadError) return;
     const record = createInspection(templateId);
     setRecords((current) => [record, ...current]);
     setActiveRecordId(record.id);
@@ -437,17 +484,32 @@ function App({ currentUser, authStore, onAddInspector, onToggleInspector, onRese
 
   const submitInspection = async (record) => {
     const completedRecord = { ...record, status: 'completed', completedAt: record.completedAt || new Date().toISOString(), updatedAt: new Date().toISOString() };
+    window.clearTimeout(saveTimer.current);
+    await saveQueue.current;
     await apiRequest('/inspections/submit', { method: 'POST', body: JSON.stringify({ record: completedRecord }) });
+    syncedRecords.current.set(completedRecord.id, JSON.stringify(completedRecord));
+    setRecordsSaveError('');
     setRecords((current) => current.map((item) => item.id === record.id ? completedRecord : item));
     return completedRecord;
   };
 
-  const removeRecord = (recordId) => {
+  const removeRecord = async (recordId) => {
     if (currentUser.role !== 'inspector') return;
-    setRecords((current) => current.filter((record) => record.id !== recordId));
-    if (activeRecordId === recordId) {
-      setActiveRecordId(null);
-      navigate('dashboard', null);
+    try {
+      window.clearTimeout(saveTimer.current);
+      await saveQueue.current;
+      if (syncedRecords.current.has(recordId)) {
+        await apiRequest(`/inspections/${encodeURIComponent(recordId)}`, { method: 'DELETE' });
+      }
+      syncedRecords.current.delete(recordId);
+      setRecords((current) => current.filter((record) => record.id !== recordId));
+      setRecordsSaveError('');
+      if (activeRecordId === recordId) {
+        setActiveRecordId(null);
+        navigate('dashboard', null);
+      }
+    } catch (error) {
+      setRecordsSaveError(`Could not delete the inspection from the shared account: ${error.message}`);
     }
   };
 
@@ -483,7 +545,7 @@ function App({ currentUser, authStore, onAddInspector, onToggleInspector, onRese
           <button className="button compact light" onClick={() => startInspection()}><Plus size={15} /> New inspection</button>
         </div>}
         <div className="sidebar-footer">
-          <ShieldCheck size={15} /> <span>Offline-ready workspace</span>
+          <ShieldCheck size={15} /> <span>Shared account workspace</span>
         </div>
       </aside>
 
@@ -495,12 +557,14 @@ function App({ currentUser, authStore, onAddInspector, onToggleInspector, onRese
             <strong>{view === 'dashboard' ? 'Overview' : view === 'library' ? 'Checklist library' : view === 'new' ? 'New inspection' : view === 'team' ? 'Inspector accounts' : activeTemplate?.title || 'Inspection'}</strong>
           </div>
           <div className="topbar-actions">
-            <span className="save-indicator"><span /> {currentUser.role === 'admin' ? 'Submitted reports' : 'Saved locally'}</span>
+            <span className="save-indicator"><span /> {currentUser.role === 'admin' ? 'Submitted reports' : 'Shared account data'}</span>
             <span className="role-chip"><span className="role-chip-dot" /> {currentUser.role === 'admin' ? 'Admin' : 'Inspector'}</span>
             <button className="avatar-button" title="Sign out" onClick={onLogout}>{(currentUser.name || currentUser.username || 'CA').slice(0, 2).toUpperCase()}</button>
           </div>
         </header>
 
+        {recordsLoading ? <div className="page"><section className="panel empty-state"><div className="empty-icon"><Clock3 size={22} /></div><h2>Loading your saved inspections.</h2><p>Connecting to your shared account data.</p></section></div> : recordsLoadError ? <div className="page"><section className="panel empty-state"><div className="empty-icon"><XCircle size={22} /></div><h2>Couldn't load your saved inspections.</h2><p>{recordsLoadError}</p><button className="button primary" onClick={() => setRecordsLoadAttempt((attempt) => attempt + 1)}>Retry loading</button></section></div> : <>
+        {recordsSaveError && <div className="auth-error" role="alert">{recordsSaveError} <button className="text-button" onClick={() => setRecordsSaveAttempt((attempt) => attempt + 1)}>Retry saving</button></div>}
         {view === 'dashboard' && <Dashboard records={records} role={currentUser.role} loading={recordsLoading} onStart={startInspection} onOpen={openAudit} onRemove={removeRecord} onLibrary={() => navigate('library')} />}
         {view === 'library' && currentUser.role === 'inspector' && <Library search={librarySearch} setSearch={setLibrarySearch} selectedTemplateId={selectedTemplateId} setSelectedTemplateId={setSelectedTemplateId} onStart={startInspection} />}
         {view === 'team' && currentUser.role === 'admin' && <Team authStore={authStore} onAddInspector={onAddInspector} onToggleInspector={onToggleInspector} onResetInspector={onResetInspector} onAdminChange={onAdminChange} />}
@@ -510,6 +574,7 @@ function App({ currentUser, authStore, onAddInspector, onToggleInspector, onRese
         {view === 'report' && activeRecord && activeTemplate && activeRecord.status === 'completed' && <Report record={activeRecord} template={activeTemplate} isAdmin={currentUser.role === 'admin'} onAudit={() => navigate('audit', activeRecord.id)} onSummary={() => navigate('summary', activeRecord.id)} onBack={() => navigate('dashboard', null)} />}
         {view === 'report' && activeRecord && activeTemplate && activeRecord.status !== 'completed' && <Summary record={activeRecord} template={activeTemplate} onUpdate={updateRecord} onAudit={() => navigate('audit', activeRecord.id)} onReport={() => navigate('report', activeRecord.id)} />}
         {recordView && (!activeRecord || !activeTemplate) && <MissingRecord onHome={() => navigate('dashboard', null)} />}
+        </>}
       </main>
     </div>
   );
@@ -727,7 +792,7 @@ function EmptyRecent({ onStart, admin }) {
 }
 
 function MissingRecord({ onHome }) {
-  return <div className="page"><div className="panel missing-record"><div className="empty-icon"><Search size={22} /></div><div className="eyebrow">LOCAL RECORD NOT FOUND</div><h2>This inspection is no longer in this browser.</h2><p>It may have been removed or you may be opening it on a different device. Return to the overview to start a new local visit.</p><button className="button primary" onClick={onHome}><Home size={16} /> Back to overview</button></div></div>;
+  return <div className="page"><div className="panel missing-record"><div className="empty-icon"><Search size={22} /></div><div className="eyebrow">RECORD NOT FOUND</div><h2>This inspection isn't in your account.</h2><p>Saved inspections are shared across devices for the same inspector account. Return to the overview to continue.</p><button className="button primary" onClick={onHome}><Home size={16} /> Back to overview</button></div></div>;
 }
 
 function Library({ search, setSearch, onStart }) {
