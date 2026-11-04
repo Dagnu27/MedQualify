@@ -122,9 +122,10 @@ function getInspectionSignatures(record) {
   const saved = record.signatures || {};
   const inspectors = Array.isArray(saved.inspectors)
     ? saved.inspectors.map((inspector) => ({
+      added: Boolean(inspector?.added),
       name: typeof inspector?.name === 'string' ? inspector.name : '',
       signature: typeof inspector?.signature === 'string' ? inspector.signature : '',
-    })).filter((inspector, index) => index === 0 || inspector.name.trim() || inspector.signature)
+    })).filter((inspector, index) => index === 0 || inspector.added || inspector.name.trim() || inspector.signature)
     : [];
   if (inspectors.length === 0) inspectors.push({ name: '', signature: '' });
   return {
@@ -885,7 +886,7 @@ function Summary({ record, template, onUpdate, onAudit, onFinalize, onReport }) 
     <section className="panel signoff-panel">
       <div className="panel-heading">
         <div><div className="eyebrow">REQUIRED REPORT SIGN-OFF</div><h2>Inspection team signatures</h2></div>
-        <button className="button ghost compact" onClick={() => onUpdate(record.id, { signatures: { ...signatures, inspectors: [...signatures.inspectors, { name: '', signature: '' }] } })}><Plus size={14} /> Add inspector</button>
+        <button className="button ghost compact" onClick={() => onUpdate(record.id, { signatures: { ...signatures, inspectors: [...signatures.inspectors, { added: true, name: '', signature: '' }] } })}><Plus size={14} /> Add inspector</button>
       </div>
       <p className="signoff-intro">One inspector name and drawn signature, plus the responsible pharmacist’s name and signature, are required. Additional inspectors are optional.</p>
       <div className="inspector-signature-list">
