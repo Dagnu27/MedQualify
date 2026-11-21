@@ -1,0 +1,31 @@
+name: careaudit
+description: CareAudit facility compliance inspections.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  dio: ^5.9.0
+  intl: ^0.20.2
+  path: ^1.9.1
+  pdf: ^3.11.3
+  printing: ^5.14.2
+  provider: ^6.1.5
+  share_plus: ^11.0.0
+  shared_preferences: ^2.5.3
+  signature: ^5.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/checklistData.json

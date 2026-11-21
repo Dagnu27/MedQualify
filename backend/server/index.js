@@ -91,6 +91,14 @@ function parseCookies(header = '') {
   return Object.fromEntries(header.split(';').map((part) => part.trim().split('=').map(decodeURIComponent)).filter(([key, value]) => key && value));
 }
 
+function sessionTokenFromRequest(request) {
+  const cookieToken = parseCookies(request.headers.cookie)[sessionCookie];
+  if (cookieToken) return cookieToken;
+  const header = request.headers.authorization || '';
+  if (header.toLowerCase().startsWith('bearer ')) return header.slice(7).trim();
+  return null;
+}
+
 function setSessionCookie(response, token) {
   response.setHeader('Set-Cookie', `${sessionCookie}=${encodeURIComponent(token)}; Path=/; HttpOnly${secureCookie}; SameSite=Lax; Max-Age=${sessionMaxAge}`);
 }
@@ -183,7 +191,7 @@ async function ensureSchema() {
 
 async function authenticated(request, response, next) {
   try {
-    const token = parseCookies(request.headers.cookie)[sessionCookie];
+    const token = sessionTokenFromRequest(request);
     if (!token) return response.status(401).json({ error: 'Not signed in.' });
     const user = one(`SELECT u.* FROM careaudit_sessions s JOIN careaudit_users u ON u.id = s.user_id WHERE s.token_hash = ? AND s.expires_at > CURRENT_TIMESTAMP AND u.active = 1 LIMIT 1`, hashToken(token));
     if (!user) return response.status(401).json({ error: 'Session expired.' });
@@ -201,6 +209,18 @@ function adminOnly(request, response, next) {
 
 const app = express();
 app.disable('x-powered-by');
+app.use((request, response, next) => {
+  const origin = request.headers.origin;
+  if (origin) {
+    response.setHeader('Access-Control-Allow-Origin', origin);
+    response.setHeader('Access-Control-Allow-Credentials', 'true');
+    response.setHeader('Vary', 'Origin');
+  }
+  response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  response.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
+  if (request.method === 'OPTIONS') return response.status(204).end();
+  return next();
+});
 app.use(express.json({ limit: '2mb' }));
 
 app.get('/api/health', async (_request, response) => {
@@ -231,13 +251,13 @@ app.post('/api/auth/login', async (request, response, next) => {
     run('DELETE FROM careaudit_sessions WHERE expires_at <= CURRENT_TIMESTAMP');
     run("INSERT INTO careaudit_sessions (token_hash, user_id, expires_at) VALUES (?, ?, datetime('now', '+7 days'))", hashToken(token), user.id);
     setSessionCookie(response, token);
-    response.json({ user: publicUser(user) });
+    response.json({ user: publicUser(user), token });
   } catch (error) { next(error); }
 });
 
 app.post('/api/auth/logout', async (request, response, next) => {
   try {
-    const token = parseCookies(request.headers.cookie)[sessionCookie];
+    const token = sessionTokenFromRequest(request);
     if (token) run('DELETE FROM careaudit_sessions WHERE token_hash = ?', hashToken(token));
     clearSessionCookie(response);
     response.json({ ok: true });
