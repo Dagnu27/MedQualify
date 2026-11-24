@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: medqualify
+    runtime: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_NAME
+        value: CareAudit Administrator
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        value: 12345678

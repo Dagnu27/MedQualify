@@ -22,7 +22,7 @@ class ApiClient {
   static String _defaultBaseUrl() {
     const fromEnv = String.fromEnvironment('API_BASE_URL');
     if (fromEnv.isNotEmpty) return fromEnv;
-    return 'https://medqualify.onrender.com';
+    return 'https://medqualify-ukjw.onrender.com';
   }
 
   Future<void> init() async {
