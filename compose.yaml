@@ -1,0 +1,20 @@
+services:
+  careaudit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: careaudit
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_PATH: /app/backend/server/data/careaudit.sqlite
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+    volumes:
+      - careaudit-data:/app/backend/server/data
+
+volumes:
+  careaudit-data:

@@ -30,7 +30,11 @@ const databasePath = path.resolve(process.env.DATABASE_PATH || path.join(__dirna
 const sessionCookie = 'care_session';
 const sessionMaxAge = 60 * 60 * 24 * 7;
 const secureCookie = process.env.NODE_ENV === 'production' ? '; Secure' : '';
-const defaultAdmin = { name: 'CareAudit Administrator', username: 'admin', password: '12345678' };
+const defaultAdmin = {
+  name: process.env.ADMIN_NAME || 'CareAudit Administrator',
+  username: (process.env.ADMIN_USERNAME || 'admin').trim().toLowerCase(),
+  password: process.env.ADMIN_PASSWORD || '12345678',
+};
 
 fs.mkdirSync(path.dirname(databasePath), { recursive: true });
 const db = new DatabaseSync(databasePath);

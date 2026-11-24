@@ -183,7 +183,7 @@ class ReportExporter {
           ),
           pw.SizedBox(height: 16),
 
-          // Attention Markers (Gaps)
+        
           pw.Text('02 · ATTENTION MARKERS & GAPS (${stats.gaps.length})',
               style: pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold, color: primaryColor)),
           pw.SizedBox(height: 6),

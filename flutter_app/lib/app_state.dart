@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -57,6 +58,7 @@ class AppState extends ChangeNotifier {
 
   final ApiClient api;
   final List<ChecklistTemplate> templates;
+  Timer? _syncTimer;
 
   UserAccount? currentUser;
   UserAccount? admin;
@@ -180,6 +182,7 @@ class AppState extends ChangeNotifier {
     } catch (_) {
       // Storage error
     } finally {
+      _startAutoSync();
       loading = false;
       notifyListeners();
     }
@@ -331,10 +334,13 @@ class AppState extends ChangeNotifier {
     } else {
       await loadLocalRecords();
     }
+    _startAutoSync();
     notifyListeners();
   }
 
   Future<void> logout() async {
+    _syncTimer?.cancel();
+    _syncTimer = null;
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_sessionKey);
     try {
@@ -509,6 +515,19 @@ class AppState extends ChangeNotifier {
     return successCount;
   }
 
+  void _startAutoSync() {
+    _syncTimer?.cancel();
+    if (!isInspector) return;
+    _syncTimer = Timer.periodic(const Duration(seconds: 30), (_) {
+      if (pendingSyncCount > 0 && isInspector) {
+        syncPendingInspections();
+      }
+    });
+    if (pendingSyncCount > 0) {
+      syncPendingInspections();
+    }
+  }
+
   void clearSyncMessage() {
     syncMessage = '';
     notifyListeners();
@@ -610,5 +629,11 @@ class AppState extends ChangeNotifier {
       await prefs.setString(_sessionKey, jsonEncode(currentUser!.toJson()));
     }
     notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    _syncTimer?.cancel();
+    super.dispose();
   }
 }

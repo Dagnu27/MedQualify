@@ -22,17 +22,18 @@ class ApiClient {
   static String _defaultBaseUrl() {
     const fromEnv = String.fromEnvironment('API_BASE_URL');
     if (fromEnv.isNotEmpty) return fromEnv;
-    if (kIsWeb) return 'http://127.0.0.1:3001';
-    if (defaultTargetPlatform == TargetPlatform.android) return 'http://127.0.0.1:3001';
-    return 'http://127.0.0.1:3001';
+    return 'https://medqualify.onrender.com';
   }
 
   Future<void> init() async {
     final prefs = await SharedPreferences.getInstance();
     token = prefs.getString('careaudit_token');
-    final savedBase = prefs.getString('careaudit_base_url');
-    if (savedBase != null && savedBase.isNotEmpty) {
-      baseUrl = savedBase;
+    const fromEnv = String.fromEnvironment('API_BASE_URL');
+    if (fromEnv.isEmpty) {
+      final savedBase = prefs.getString('careaudit_base_url');
+      if (savedBase != null && savedBase.isNotEmpty) {
+        baseUrl = savedBase;
+      }
     }
     dio = Dio(BaseOptions(
       baseUrl: '$baseUrl/api',
@@ -49,10 +50,18 @@ class ApiClient {
   }
 
   Future<void> setBaseUrl(String url) async {
-    baseUrl = url;
-    dio.options.baseUrl = '$url/api';
+    final normalized = url.trim().replaceFirst(RegExp(r'/+$'), '');
+    final uri = Uri.tryParse(normalized);
+    if (uri == null ||
+        !uri.hasScheme ||
+        !uri.hasAuthority ||
+        (uri.scheme != 'https' && uri.scheme != 'http')) {
+      throw ApiException('Enter a valid HTTP or HTTPS server address.');
+    }
+    baseUrl = normalized;
+    dio.options.baseUrl = '$normalized/api';
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('careaudit_base_url', url);
+    await prefs.setString('careaudit_base_url', normalized);
   }
 
   Future<void> _persistToken(String? value) async {

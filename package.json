@@ -10,6 +10,12 @@
   "scripts": {
     "dev": "concurrently --restart-tries -1 --restart-after 1000 \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
     "server": "npm start --prefix backend",
+    "server:production": "powershell -ExecutionPolicy Bypass -File ./scripts/start-careaudit.ps1",
+    "server:autostart": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/install-windows-autostart.ps1",
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f",
+    "docker:health": "docker compose exec careaudit node -e \"fetch('http://127.0.0.1:3000/api/health').then(r=>r.json()).then(console.log).catch(e=>{console.error(e);process.exit(1)})\"",
     "reset-admin": "npm run reset-admin --prefix backend",
     "build": "npm run build --prefix frontend",
     "preview": "npm run preview --prefix frontend"

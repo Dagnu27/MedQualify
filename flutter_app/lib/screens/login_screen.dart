@@ -54,6 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _changeServerUrl(BuildContext context, ApiClient api) async {
+    final messenger = ScaffoldMessenger.maybeOf(context);
     final controller = TextEditingController(text: api.baseUrl);
     final nextUrl = await showDialog<String>(
       context: context,
@@ -64,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Set your backend API address. When testing over USB or local Wi-Fi, point this to your computer.\n\nExamples:\n• USB (via adb reverse): http://127.0.0.1:3001\n• Wi-Fi LAN IP: http://192.168.137.39:3001',
+              'Set your backend API address. Use HTTPS for production and an HTTP LAN address only for local development.\n\nExamples:\n• Production: https://medqualify.onrender.com\n• Local server: http://192.168.1.20:3001',
               style: TextStyle(fontSize: 12, color: AppColors.inkSoft),
             ),
             const SizedBox(height: 12),
@@ -90,8 +91,11 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
     if (nextUrl != null && nextUrl.isNotEmpty) {
-      await api.setBaseUrl(nextUrl);
-      if (mounted) setState(() {});
+      try {
+        await api.setBaseUrl(nextUrl);
+      } catch (error) {
+        messenger?.showSnackBar(SnackBar(content: Text(error.toString())));
+      }
     }
   }
 
